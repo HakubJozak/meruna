@@ -1,0 +1,14 @@
+# Here you can specify default options for TinyMCE across all controllers
+#
+# theme: advanced
+#    advanced
+#      buttons1: bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,removeformat
+#      toolbar
+#        location: top
+#        align: left
+#      statusbar
+#        location: bottom
+
+#    plugins:
+#     - table
+#     - inlinepopups

@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Factory</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+    <script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>     
+    <div class="banner">
+        <h1>
+            <span class="type">Class</span> 
+            Factory 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/lib/factory_girl/factory_rb.html">lib/factory_girl/factory.rb</a></li>
+            
+            <li><a href="../files/lib/factory_girl/aliases_rb.html">lib/factory_girl/aliases.rb</a></li>
+            
+            <li><a href="../files/lib/factory_girl/attribute/dynamic_rb.html">lib/factory_girl/attribute/dynamic.rb</a></li>
+            
+            <li><a href="../files/lib/factory_girl/attribute/association_rb.html">lib/factory_girl/attribute/association.rb</a></li>
+            
+            <li><a href="../files/lib/factory_girl/proxy_rb.html">lib/factory_girl/proxy.rb</a></li>
+            
+            <li><a href="../files/lib/factory_girl/attribute/static_rb.html">lib/factory_girl/attribute/static.rb</a></li>
+            
+            <li><a href="../files/lib/factory_girl/proxy/build_rb.html">lib/factory_girl/proxy/build.rb</a></li>
+            
+            <li><a href="../files/lib/factory_girl/proxy/stub_rb.html">lib/factory_girl/proxy/stub.rb</a></li>
+            
+            <li><a href="../files/lib/factory_girl/proxy/attributes_for_rb.html">lib/factory_girl/proxy/attributes_for.rb</a></li>
+            
+            <li><a href="../files/lib/factory_girl/proxy/create_rb.html">lib/factory_girl/proxy/create.rb</a></li>
+            
+            <li><a href="../files/lib/factory_girl/sequence_rb.html">lib/factory_girl/sequence.rb</a></li>
+            
+            <li><a href="../files/lib/factory_girl/attribute_rb.html">lib/factory_girl/attribute.rb</a></li>
+            
+            <li><a href="../files/lib/factory_girl/syntax_rb.html">lib/factory_girl/syntax.rb</a></li>
+            
+            <li><a href="../files/lib/factory_girl/syntax/sham_rb.html">lib/factory_girl/syntax/sham.rb</a></li>
+            
+            <li><a href="../files/lib/factory_girl/syntax/make_rb.html">lib/factory_girl/syntax/make.rb</a></li>
+            
+            <li><a href="../files/lib/factory_girl/syntax/blueprint_rb.html">lib/factory_girl/syntax/blueprint.rb</a></li>
+            
+            <li><a href="../files/lib/factory_girl/syntax/generate_rb.html">lib/factory_girl/syntax/generate.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+    
+
+    
+
+    
+    
+
+    
+    
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+    
+        <dt>A</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000012">add_attribute</a>,</li>
+                
+                <li><a href="#M000010">alias</a>,</li>
+                
+                <li><a href="#M000014">association</a>,</li>
+                
+                <li><a href="#M000016">attributes_for</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>B</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000017">build</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>C</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000018">create</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>D</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000020">default_strategy</a>,</li>
+                
+                <li><a href="#M000004">define</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>M</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000013">method_missing</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>N</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000035">next</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>S</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000015">sequence</a>,</li>
+                
+                <li><a href="#M000034">sequence</a>,</li>
+                
+                <li><a href="#M000019">stub</a></li>
+                
+            </ul>
+        </dd>
+    
+    </dl>
+    
+
+    
+
+    
+
+    
+    <div class="sectiontitle">Classes and Modules</div>
+    <ul>
+        
+        <li><span class="type">MODULE</span> <a href="Factory/Syntax.html">Factory::Syntax</a></li>
+        
+        <li><span class="type">CLASS</span> <a href="Factory/AssociationDefinitionError.html">Factory::AssociationDefinitionError</a></li>
+        
+        <li><span class="type">CLASS</span> <a href="Factory/Attribute.html">Factory::Attribute</a></li>
+        
+        <li><span class="type">CLASS</span> <a href="Factory/AttributeDefinitionError.html">Factory::AttributeDefinitionError</a></li>
+        
+        <li><span class="type">CLASS</span> <a href="Factory/Proxy.html">Factory::Proxy</a></li>
+        
+        <li><span class="type">CLASS</span> <a href="Factory/Sequence.html">Factory::Sequence</a></li>
+        
+        <li><span class="type">CLASS</span> <a href="Factory/SequenceAbuseError.html">Factory::SequenceAbuseError</a></li>
+        
+    </ul>
+    
+
+    
+
+    
+    <div class="sectiontitle">Attributes</div>
+    <table border='0' cellpadding='5'>
+        
+        <tr valign='top'>
+            <td class='attr-rw'>
+                [RW]
+            </td>
+            <td class='attr-name'>definition_file_paths</td>
+            <td class='attr-desc'><p>
+An Array of strings specifying locations that should be searched for
+factory definitions. By default, factory_girl will attempt to require
+&#8220;factories,&#8221; &#8220;test/factories,&#8221; and
+&#8220;spec/factories.&#8220; Only the first existing file will be loaded.
+</p></td>
+        </tr>
+        
+    </table>
+    
+
+    
+            <div class="sectiontitle">Class Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="M000010">
+                    
+                    <a name="M000010"></a><b>alias</b>(pattern, replace)
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Defines a new alias for attributes.
+</p>
+<p>
+Arguments:
+</p>
+<ul>
+<li>pattern: <tt>Regexp</tt> A pattern that will be matched against attributes
+when looking for aliases. Contents captured in the pattern can be used in
+the alias.
+
+</li>
+<li>replace: <tt>String</tt> The alias that results from the matched pattern.
+Captured strings can be substituded like with +String#sub+.
+
+</li>
+</ul>
+<p>
+Example:
+</p>
+<pre>
+  Factory.alias /(.*)_confirmation/, '\1'
+</pre>
+<p>
+factory_girl starts with aliases for foreign keys, so that a :user
+association can be overridden by a :user_id parameter:
+</p>
+<pre>
+  Factory.define :post do |p|
+    p.association :user
+  end
+
+  # The user association will not be built in this example. The user_id
+  # will be used instead.
+  Factory(:post, :user_id =&gt; 1)
+</pre>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000010_source')" id="l_M000010_source">show</a>
+                        
+                    </p>
+                    <div id="M000010_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/factory_girl/aliases.rb, line 35</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-keyword kw">alias</span> (<span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">replace</span>)
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">aliases</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">replace</span>]
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000016">
+                    
+                    <a name="M000016"></a><b>attributes_for</b>(name, overrides = {})
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Generates and returns a Hash of attributes from this factory. Attributes
+can be individually overridden by passing in a Hash of attribute => value
+pairs.
+</p>
+<p>
+Arguments:
+</p>
+<ul>
+<li>name: <tt>Symbol</tt> or <tt>String</tt> The name of the factory that
+should be used.
+
+</li>
+<li>overrides: <tt>Hash</tt> Attributes to overwrite for this set.
+
+</li>
+</ul>
+<p>
+Returns: <tt>Hash</tt> A set of attributes that can be used to build an
+instance of the class this factory generates.
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000016_source')" id="l_M000016_source">show</a>
+                        
+                    </p>
+                    <div id="M000016_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/factory_girl/factory.rb, line 200</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">attributes_for</span> (<span class="ruby-identifier">name</span>, <span class="ruby-identifier">overrides</span> = {})
+    <span class="ruby-identifier">factory_by_name</span>(<span class="ruby-identifier">name</span>).<span class="ruby-identifier">run</span>(<span class="ruby-constant">Proxy</span><span class="ruby-operator">::</span><span class="ruby-constant">AttributesFor</span>, <span class="ruby-identifier">overrides</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000017">
+                    
+                    <a name="M000017"></a><b>build</b>(name, overrides = {})
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Generates and returns an instance from this factory. Attributes can be
+individually overridden by passing in a Hash of attribute => value pairs.
+</p>
+<p>
+Arguments:
+</p>
+<ul>
+<li>name: <tt>Symbol</tt> or <tt>String</tt> The name of the factory that
+should be used.
+
+</li>
+<li>overrides: <tt>Hash</tt> Attributes to overwrite for this instance.
+
+</li>
+</ul>
+<p>
+Returns: <tt>Object</tt> An instance of the class this factory generates,
+with generated attributes assigned.
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000017_source')" id="l_M000017_source">show</a>
+                        
+                    </p>
+                    <div id="M000017_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/factory_girl/factory.rb, line 216</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">build</span> (<span class="ruby-identifier">name</span>, <span class="ruby-identifier">overrides</span> = {})
+    <span class="ruby-identifier">factory_by_name</span>(<span class="ruby-identifier">name</span>).<span class="ruby-identifier">run</span>(<span class="ruby-constant">Proxy</span><span class="ruby-operator">::</span><span class="ruby-constant">Build</span>, <span class="ruby-identifier">overrides</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000018">
+                    
+                    <a name="M000018"></a><b>create</b>(name, overrides = {})
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Generates, saves, and returns an instance from this factory. Attributes can
+be individually overridden by passing in a Hash of attribute => value
+pairs.
+</p>
+<p>
+Instances are saved using the <tt>save!</tt> method, so ActiveRecord models
+will raise ActiveRecord::RecordInvalid exceptions for invalid attribute
+sets.
+</p>
+<p>
+Arguments:
+</p>
+<ul>
+<li>name: <tt>Symbol</tt> or <tt>String</tt> The name of the factory that
+should be used.
+
+</li>
+<li>overrides: <tt>Hash</tt> Attributes to overwrite for this instance.
+
+</li>
+</ul>
+<p>
+Returns: <tt>Object</tt> A saved instance of the class this factory
+generates, with generated attributes assigned.
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000018_source')" id="l_M000018_source">show</a>
+                        
+                    </p>
+                    <div id="M000018_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/factory_girl/factory.rb, line 236</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">create</span> (<span class="ruby-identifier">name</span>, <span class="ruby-identifier">overrides</span> = {})
+    <span class="ruby-identifier">factory_by_name</span>(<span class="ruby-identifier">name</span>).<span class="ruby-identifier">run</span>(<span class="ruby-constant">Proxy</span><span class="ruby-operator">::</span><span class="ruby-constant">Create</span>, <span class="ruby-identifier">overrides</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000020">
+                    
+                    <a name="M000020"></a><b>default_strategy</b>(name, overrides = {})
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Executes the default strategy for the given factory. This is usually
+create, but it can be overridden for each factory.
+</p>
+<p>
+Arguments:
+</p>
+<ul>
+<li>name: <tt>Symbol</tt> or <tt>String</tt> The name of the factory that
+should be used.
+
+</li>
+<li>overrides: <tt>Hash</tt> Attributes to overwrite for this instance.
+
+</li>
+</ul>
+<p>
+Returns: <tt>Object</tt> The result of the default strategy.
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000020_source')" id="l_M000020_source">show</a>
+                        
+                    </p>
+                    <div id="M000020_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/factory_girl/factory.rb, line 267</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">default_strategy</span> (<span class="ruby-identifier">name</span>, <span class="ruby-identifier">overrides</span> = {})  
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">factory_by_name</span>(<span class="ruby-identifier">name</span>).<span class="ruby-identifier">default_strategy</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">overrides</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000004">
+                    
+                    <a name="M000004"></a><b>define</b>(name, options = {})
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Defines a new factory that can be used by the build strategies (create and
+build) to build new objects.
+</p>
+<p>
+Arguments:
+</p>
+<ul>
+<li>name: <tt>Symbol</tt> or <tt>String</tt> A unique name used to identify
+this factory.
+
+</li>
+<li>options: <tt>Hash</tt>
+
+</li>
+</ul>
+<p>
+Options:
+</p>
+<ul>
+<li>class: <tt>Symbol</tt>, <tt>Class</tt>, or <tt>String</tt> The class that
+will be used when generating instances for this factory. If not specified,
+the class will be guessed from the factory name.
+
+</li>
+<li>parent: <tt>Symbol</tt> The parent factory. If specified, the attributes
+from the parent factory will be copied to the current one with an ability
+to override them.
+
+</li>
+<li><a href="Factory.html#M000020">default_strategy</a>: <tt>Symbol</tt> The
+strategy that will be used by the <a href="Factory.html">Factory</a>
+shortcut method. Defaults to :create.
+
+</li>
+</ul>
+<p>
+Yields: <tt>Factory</tt> The newly created factory.
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000004_source')" id="l_M000004_source">show</a>
+                        
+                    </p>
+                    <div id="M000004_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/factory_girl/factory.rb, line 44</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">define</span> (<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span> = {})
+    <span class="ruby-identifier">instance</span> = <span class="ruby-constant">Factory</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span>)
+    <span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">instance</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">parent</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:parent</span>)
+      <span class="ruby-identifier">instance</span>.<span class="ruby-identifier">inherit_from</span>(<span class="ruby-constant">Factory</span>.<span class="ruby-identifier">factory_by_name</span>(<span class="ruby-identifier">parent</span>))
+    <span class="ruby-keyword kw">end</span>    
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">factories</span>[<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">factory_name</span>] = <span class="ruby-identifier">instance</span>
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000035">
+                    
+                    <a name="M000035"></a><b>next</b>(sequence)
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Generates and returns the next value in a sequence.
+</p>
+<p>
+Arguments:
+</p>
+<pre>
+  name: (Symbol)
+    The name of the sequence that a value should be generated for.
+</pre>
+<p>
+Returns:
+</p>
+<pre>
+  The next value in the sequence. (Object)
+</pre>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000035_source')" id="l_M000035_source">show</a>
+                        
+                    </p>
+                    <div id="M000035_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/factory_girl/sequence.rb, line 55</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-keyword kw">next</span> (<span class="ruby-identifier">sequence</span>)
+    <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">sequences</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">sequence</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;No such sequence: #{sequence}&quot;</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">sequences</span>[<span class="ruby-identifier">sequence</span>].<span class="ruby-identifier">next</span>
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000034">
+                    
+                    <a name="M000034"></a><b>sequence</b>(name, &amp;block)
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Defines a new sequence that can be used to generate unique values in a
+specific format.
+</p>
+<p>
+Arguments:
+</p>
+<pre>
+  name: (Symbol)
+    A unique name for this sequence. This name will be referenced when
+    calling next to generate new values from this sequence.
+  block: (Proc)
+    The code to generate each value in the sequence. This block will be
+    called with a unique number each time a value in the sequence is to be
+    generated. The block should return the generated value for the
+    sequence.
+</pre>
+<p>
+Example:
+</p>
+<pre>
+  Factory.sequence(:email) {|n| &quot;somebody_#{n}@example.com&quot; }
+</pre>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000034_source')" id="l_M000034_source">show</a>
+                        
+                    </p>
+                    <div id="M000034_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/factory_girl/sequence.rb, line 43</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">sequence</span> (<span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">sequences</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-constant">Sequence</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000019">
+                    
+                    <a name="M000019"></a><b>stub</b>(name, overrides = {})
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Generates and returns an object with all attributes from this factory
+stubbed out. Attributes can be individually overridden by passing in a Hash
+of attribute => value pairs.
+</p>
+<p>
+Arguments:
+</p>
+<ul>
+<li>name: <tt>Symbol</tt> or <tt>String</tt> The name of the factory that
+should be used.
+
+</li>
+<li>overrides: <tt>Hash</tt> Attributes to overwrite for this instance.
+
+</li>
+</ul>
+<p>
+Returns: <tt>Object</tt> An object with generated attributes stubbed out.
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000019_source')" id="l_M000019_source">show</a>
+                        
+                    </p>
+                    <div id="M000019_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/factory_girl/factory.rb, line 252</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">stub</span> (<span class="ruby-identifier">name</span>, <span class="ruby-identifier">overrides</span> = {})
+    <span class="ruby-identifier">factory_by_name</span>(<span class="ruby-identifier">name</span>).<span class="ruby-identifier">run</span>(<span class="ruby-constant">Proxy</span><span class="ruby-operator">::</span><span class="ruby-constant">Stub</span>, <span class="ruby-identifier">overrides</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="sectiontitle">Instance Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="M000012">
+                    
+                    <a name="M000012"></a><b>add_attribute</b>(name, value = nil, &amp;block)
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Adds an attribute that should be assigned on generated instances for this
+factory.
+</p>
+<p>
+This method should be called with either a value or block, but not both. If
+called with a block, the attribute will be generated &#8220;lazily,&#8221;
+whenever an instance is generated. Lazy attribute blocks will not be called
+if that attribute is overriden for a specific instance.
+</p>
+<p>
+When defining lazy attributes, an instance of Factory::Proxy will be
+yielded, allowing associations to be built using the correct build
+strategy.
+</p>
+<p>
+Arguments:
+</p>
+<ul>
+<li>name: <tt>Symbol</tt> or <tt>String</tt> The name of this attribute. This
+will be assigned using :&#8221;#{name}=&#8221; for generated instances.
+
+</li>
+<li>value: <tt>Object</tt> If no block is given, this value will be used for
+this attribute.
+
+</li>
+</ul>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000012_source')" id="l_M000012_source">show</a>
+                        
+                    </p>
+                    <div id="M000012_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/factory_girl/factory.rb, line 99</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_attribute</span> (<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">AttributeDefinitionError</span>, <span class="ruby-value str">&quot;Both value and block given&quot;</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">attribute</span> = <span class="ruby-constant">Attribute</span><span class="ruby-operator">::</span><span class="ruby-constant">Dynamic</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">block</span>)
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">attribute</span> = <span class="ruby-constant">Attribute</span><span class="ruby-operator">::</span><span class="ruby-constant">Static</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>)
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">attribute_defined?</span>(<span class="ruby-identifier">attribute</span>.<span class="ruby-identifier">name</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">AttributeDefinitionError</span>, <span class="ruby-node">&quot;Attribute already defined: #{name}&quot;</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-ivar">@attributes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">attribute</span>
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000014">
+                    
+                    <a name="M000014"></a><b>association</b>(name, options = {})
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Adds an attribute that builds an association. The associated instance will
+be built using the same build strategy as the parent instance.
+</p>
+<p>
+Example:
+</p>
+<pre>
+  Factory.define :user do |f|
+    f.name 'Joey'
+  end
+
+  Factory.define :post do |f|
+    f.association :author, :factory =&gt; :user
+  end
+</pre>
+<p>
+Arguments:
+</p>
+<ul>
+<li>name: <tt>Symbol</tt> The name of this attribute.
+
+</li>
+<li>options: <tt>Hash</tt>
+
+</li>
+</ul>
+<p>
+Options:
+</p>
+<ul>
+<li>factory: <tt>Symbol</tt> or <tt>String</tt>
+
+<pre>
+ The name of the factory to use when building the associated instance.
+ If no name is given, the name of the attribute is assumed to be the
+ name of the factory. For example, a &quot;user&quot; association will by
+ default use the &quot;user&quot; factory.
+</pre>
+</li>
+</ul>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000014_source')" id="l_M000014_source">show</a>
+                        
+                    </p>
+                    <div id="M000014_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/factory_girl/factory.rb, line 158</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">association</span> (<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span> = {})
+    <span class="ruby-identifier">factory_name</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:factory</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">name</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">factory_name_for</span>(<span class="ruby-identifier">factory_name</span>) <span class="ruby-operator">==</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">factory_name</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">AssociationDefinitionError</span>, <span class="ruby-node">&quot;Self-referencing association '#{name}' in factory '#{self.factory_name}'&quot;</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-ivar">@attributes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Attribute</span><span class="ruby-operator">::</span><span class="ruby-constant">Association</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">factory_name</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000013">
+                    
+                    <a name="M000013"></a><b>method_missing</b>(name, *args, &amp;block)
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Calls <a href="Factory.html#M000012">add_attribute</a> using the missing
+method name as the name of the attribute, so that:
+</p>
+<pre>
+  Factory.define :user do |f|
+    f.name 'Billy Idol'
+  end
+</pre>
+<p>
+and:
+</p>
+<pre>
+  Factory.define :user do |f|
+    f.add_attribute :name, 'Billy Idol'
+  end
+</pre>
+<p>
+are equivilent.
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000013_source')" id="l_M000013_source">show</a>
+                        
+                    </p>
+                    <div id="M000013_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/factory_girl/factory.rb, line 131</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method_missing</span> (<span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">add_attribute</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000015">
+                    
+                    <a name="M000015"></a><b>sequence</b>(name, &amp;block)
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Adds an attribute that will have unique values generated by a sequence with
+a specified format.
+</p>
+<p>
+The result of:
+</p>
+<pre>
+  Factory.define :user do |f|
+   f.sequence(:email) { |n| &quot;person#{n}@example.com&quot; }
+  end
+</pre>
+<p>
+Is equal to:
+</p>
+<pre>
+  Factory.sequence(:email) { |n| &quot;person#{n}@example.com&quot; }
+
+  Factory.define :user do |f|
+   f.email { Factory.next(:email) }
+  end
+</pre>
+<p>
+Except that no globally available sequence will be defined.
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000015_source')" id="l_M000015_source">show</a>
+                        
+                    </p>
+                    <div id="M000015_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/factory_girl/factory.rb, line 182</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sequence</span> (<span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">s</span> = <span class="ruby-constant">Sequence</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">add_attribute</span>(<span class="ruby-identifier">name</span>) { <span class="ruby-identifier">s</span>.<span class="ruby-identifier">next</span> }
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+</div>
+    </div>
+  </body>
+</html>    

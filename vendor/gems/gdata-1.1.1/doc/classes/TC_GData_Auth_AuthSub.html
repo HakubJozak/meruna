@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>TC_GData_Auth_AuthSub</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+    <script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>     
+    <div class="banner">
+        <h1>
+            <span class="type">Class</span> 
+            TC_GData_Auth_AuthSub 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/test/tc_gdata_auth_authsub_rb.html">test/tc_gdata_auth_authsub.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+    
+
+    
+
+    
+    
+
+    
+    
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+    
+        <dt>T</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000011">test_generate_url</a>,</li>
+                
+                <li><a href="#M000010">test_make_authenticated_request</a></li>
+                
+            </ul>
+        </dd>
+    
+    </dl>
+    
+
+    
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+        
+        <li>
+            
+            <a href="TestHelper.html">TestHelper</a>
+            
+            START:includes
+        </li>
+        
+    </ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+            <div class="sectiontitle">Instance Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="M000011">
+                    
+                    <a name="M000011"></a><b>test_generate_url</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000011_source')" id="l_M000011_source">show</a>
+                        
+                    </p>
+                    <div id="M000011_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File test/tc_gdata_auth_authsub.rb, line 38</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_generate_url</span>
+    <span class="ruby-identifier">scope</span> = <span class="ruby-value str">'http://gdata.youtube.com'</span>
+    <span class="ruby-identifier">next_url</span> = <span class="ruby-value str">'http://example.com'</span>
+    <span class="ruby-identifier">secure</span> = <span class="ruby-keyword kw">true</span>
+    <span class="ruby-identifier">session</span> = <span class="ruby-keyword kw">false</span>
+    <span class="ruby-identifier">url</span> = <span class="ruby-constant">GData</span><span class="ruby-operator">::</span><span class="ruby-constant">Auth</span><span class="ruby-operator">::</span><span class="ruby-constant">AuthSub</span>.<span class="ruby-identifier">get_url</span>(<span class="ruby-identifier">next_url</span>, <span class="ruby-identifier">scope</span>, <span class="ruby-identifier">secure</span>, <span class="ruby-identifier">session</span>)
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">'https://www.google.com/accounts/AuthSubRequest?next=http%3A%2F%2Fexample.com&amp;scope=http%3A%2F%2Fgdata.youtube.com&amp;session=0&amp;secure=1'</span>, <span class="ruby-identifier">url</span>)
+    
+    <span class="ruby-comment cmt"># test generating with a pre-populated scope</span>
+    <span class="ruby-identifier">yt</span> = <span class="ruby-constant">GData</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">YouTube</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">client_url</span> = <span class="ruby-identifier">yt</span>.<span class="ruby-identifier">authsub_url</span>(<span class="ruby-identifier">next_url</span>, <span class="ruby-identifier">secure</span>, <span class="ruby-identifier">session</span>)
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">url</span>, <span class="ruby-identifier">client_url</span>)
+    
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000010">
+                    
+                    <a name="M000010"></a><b>test_make_authenticated_request</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000010_source')" id="l_M000010_source">show</a>
+                        
+                    </p>
+                    <div id="M000010_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File test/tc_gdata_auth_authsub.rb, line 22</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_make_authenticated_request</span>
+    <span class="ruby-identifier">token</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">get_authsub_token</span>()
+    <span class="ruby-identifier">key</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">get_authsub_private_key</span>()
+    <span class="ruby-identifier">service</span> = <span class="ruby-constant">GData</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">YouTube</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">token</span>
+      
+      <span class="ruby-identifier">service</span>.<span class="ruby-identifier">authsub_token</span> = <span class="ruby-identifier">token</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">key</span>
+        <span class="ruby-identifier">service</span>.<span class="ruby-identifier">authsub_private_key</span> = <span class="ruby-identifier">key</span>
+      <span class="ruby-keyword kw">end</span>
+      
+      <span class="ruby-identifier">feed</span> = <span class="ruby-identifier">service</span>.<span class="ruby-identifier">get</span>(<span class="ruby-value str">'http://gdata.youtube.com/feeds/api/users/default/uploads?max-results=1'</span>)
+      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">assert_not_nil</span>(<span class="ruby-identifier">feed</span>, <span class="ruby-value str">'Feed should not be nil'</span>)
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+</div>
+    </div>
+  </body>
+</html>    

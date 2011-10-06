@@ -1,0 +1,27 @@
+<% main_div_class('downloads') %>
+
+<h2 class='header'>News</h2>
+
+<div class="decorationTable">
+  <table>
+    <tr>
+      <th></th>
+      <th>Published</th>
+      <th>Title</th>
+      <th>Story</th>
+    </tr>
+    <% @headlines.each do |headline| -%>
+    <tr>
+      <td>
+        <%= image_tag headline.news_type.icon.url, :size => '56x49', :alt => headline.title, :class => 'icon' %>
+      </td>
+      <td><%= time_ago_in_words(headline.created_at) %> ago</td>
+      <td><%= headline.title %></td>
+      <td><%= headline.short %></td>
+      <td>
+        <%= link_to 'read more', public_headline_path(headline), { :class => 'more' }  %>
+      </td>
+    </tr>
+    <% end -%>
+  </table>
+</div>

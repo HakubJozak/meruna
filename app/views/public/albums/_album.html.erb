@@ -1,0 +1,8 @@
+<div class="<%= clazz %>">
+  <div class='correct'></div>
+    <% link_to public_album_path(album) do %>
+      <%= image_tag( cover_url(album), :alt => album.name, :size => '157x112' )%>
+    <% end -%>
+  <h3><%= album.name %></h3>
+  <%= render :partial => "album_info", :object => album %>
+</div>

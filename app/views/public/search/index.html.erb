@@ -1,0 +1,23 @@
+<% main_div_class('photogalleries') %>
+
+<h1  class='header'>Results</h1>
+
+<table id="searchResults" >
+  <% @results.each do |r| %>
+    <% content_tag_for( :tr, r) do %>
+        <td colspan="2"><%= link_to r.name, url_for_search_result(r) %></td>
+    <% end -%>
+    <% content_tag :tr, :class => 'summary' do %>
+        <td>
+          <%= image_tag r.picture.url(:thumb), :size => '56x49' if r.respond_to?(:picture) and r.picture %>
+        </td>
+        <td>
+          <p><%= truncate(r.summary.to_s.gsub(/<\/?[^>]*>/, "") , :length => 200) %></p>
+        </td>
+    <% end -%>
+  <% end -%>
+</table>
+
+<div class='info'>
+  Found <%= @results.size %> result for '<%= h(@query) %>'
+</div>

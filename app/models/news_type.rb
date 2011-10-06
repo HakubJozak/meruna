@@ -1,0 +1,2 @@
+class NewsType < ContentType
+end

@@ -1,0 +1,64 @@
+#menu {
+ text-align: left;
+ padding-left: 1em;
+}
+
+#menu img {
+  border: 0;
+  padding-right: 3px;
+  vertical-align: middle;
+}
+
+#menu ul {
+  padding-left: 20px;
+}
+
+#menu li strong
+{
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#menu ul ul li > strong
+{
+  font-size: 110%;
+  font-weight: lighter;
+}
+
+#menu ul ul li > ul > li > strong {
+  font-size: 90%;
+  font-weight: lighter;
+  color: #0E0E0E;
+}
+
+#menu ul ul li > ul > li > ul > li > strong {
+  font-size: 80%;
+  font-weight: lighter;
+  color: #6F6F6F;
+}
+
+
+#menu li {
+        color: #EFAE00;
+        font-size: 110%;
+        vertical-align: middle;
+        list-style: none;
+}
+
+
+#menu a {
+        font-size:12px;
+        text-decoration: none;
+        font-weight:normal;
+}
+
+#menu a, #menu a:visited
+{
+  color: #6F6F6F;
+}
+
+#menu a:hover,
+{
+   background-color: #FFD000;
+}

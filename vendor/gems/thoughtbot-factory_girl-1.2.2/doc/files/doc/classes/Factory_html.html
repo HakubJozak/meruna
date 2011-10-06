@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Factory.html</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+    <script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>     
+    <div class="banner">
+        <h1>
+            Factory.html
+        </h1>
+        <ul class="files">
+            <li>doc/classes/Factory.html</li>
+            <li>Last modified: Mon Dec 14 10:10:44 +0100 2009</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+    
+    <div class="description">
+        <p>
+<?xml version=&#8220;1.0&#8220; encoding=&#8220;iso-8859-1&#8221;?>
+<!DOCTYPE html
+</p>
+<pre>
+     PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;
+     &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+</pre>
+<p>
+<html xmlns=&#8220;<a
+href="http://www.w3.org/1999/xhtml">www.w3.org/1999/xhtml</a>&#8220;
+xml:lang=&#8220;en&#8221; lang=&#8220;en&#8221;> <head>
+</p>
+<pre>
+  &lt;title&gt;Class: Factory&lt;/title&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=iso-8859-1&quot; /&gt;
+  &lt;meta http-equiv=&quot;Content-Script-Type&quot; content=&quot;text/javascript&quot; /&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;.././rdoc-style.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot; /&gt;
+  &lt;script type=&quot;text/javascript&quot;&gt;
+  // &lt;![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, &quot;Code&quot;, &quot;resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400&quot;)
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( &quot;document.all.&quot; + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+
+    if ( elemStyle.display != &quot;block&quot; ) {
+      elemStyle.display = &quot;block&quot;
+    } else {
+      elemStyle.display = &quot;none&quot;
+    }
+
+    return true;
+  }
+
+  // Make codeblocks hidden by default
+  document.writeln( &quot;&lt;style type=\&quot;text/css\&quot;&gt;div.method-source-code { display: none }&lt;/style&gt;&quot; )
+
+  // ]]&gt;
+  &lt;/script&gt;
+</pre>
+<p>
+</head> <body>
+</p>
+<pre>
+    &lt;div id=&quot;classHeader&quot;&gt;
+        &lt;table class=&quot;header-table&quot;&gt;
+        &lt;tr class=&quot;top-aligned-row&quot;&gt;
+          &lt;td&gt;&lt;strong&gt;Class&lt;/strong&gt;&lt;/td&gt;
+          &lt;td class=&quot;class-name-in-header&quot;&gt;Factory&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;top-aligned-row&quot;&gt;
+            &lt;td&gt;&lt;strong&gt;In:&lt;/strong&gt;&lt;/td&gt;
+            &lt;td&gt;
+                &lt;a href=&quot;../files/lib/factory_girl/factory_rb.html&quot;&gt;
+                lib/factory_girl/factory.rb
+                &lt;/a&gt;
+        &lt;br /&gt;
+                &lt;a href=&quot;../files/lib/factory_girl/aliases_rb.html&quot;&gt;
+                lib/factory_girl/aliases.rb
+                &lt;/a&gt;
+        &lt;br /&gt;
+                &lt;a href=&quot;../files/lib/factory_girl/attribute/dynamic_rb.html&quot;&gt;
+                lib/factory_girl/attribute/dynamic.rb
+                &lt;/a&gt;
+        &lt;br /&gt;
+                &lt;a href=&quot;../files/lib/factory_girl/attribute/association_rb.html&quot;&gt;
+                lib/factory_girl/attribute/association.rb
+                &lt;/a&gt;
+        &lt;br /&gt;
+                &lt;a href=&quot;../files/lib/factory_girl/attribute/static_rb.html&quot;&gt;
+                lib/factory_girl/attribute/static.rb
+                &lt;/a&gt;
+        &lt;br /&gt;
+                &lt;a href=&quot;../files/lib/factory_girl/proxy_rb.html&quot;&gt;
+                lib/factory_girl/proxy.rb
+                &lt;/a&gt;
+        &lt;br /&gt;
+                &lt;a href=&quot;../files/lib/factory_girl/proxy/build_rb.html&quot;&gt;
+                lib/factory_girl/proxy/build.rb
+                &lt;/a&gt;
+        &lt;br /&gt;
+                &lt;a href=&quot;../files/lib/factory_girl/proxy/stub_rb.html&quot;&gt;
+                lib/factory_girl/proxy/stub.rb
+                &lt;/a&gt;
+        &lt;br /&gt;
+                &lt;a href=&quot;../files/lib/factory_girl/proxy/attributes_for_rb.html&quot;&gt;
+                lib/factory_girl/proxy/attributes_for.rb
+                &lt;/a&gt;
+        &lt;br /&gt;
+                &lt;a href=&quot;../files/lib/factory_girl/proxy/create_rb.html&quot;&gt;
+                lib/factory_girl/proxy/create.rb
+                &lt;/a&gt;
+        &lt;br /&gt;
+                &lt;a href=&quot;../files/lib/factory_girl/attribute_rb.html&quot;&gt;
+                lib/factory_girl/attribute.rb
+                &lt;/a&gt;
+        &lt;br /&gt;
+                &lt;a href=&quot;../files/lib/factory_girl/sequence_rb.html&quot;&gt;
+                lib/factory_girl/sequence.rb
+                &lt;/a&gt;
+        &lt;br /&gt;
+                &lt;a href=&quot;../files/lib/factory_girl/syntax_rb.html&quot;&gt;
+                lib/factory_girl/syntax.rb
+                &lt;/a&gt;
+        &lt;br /&gt;
+                &lt;a href=&quot;../files/lib/factory_girl/syntax/sham_rb.html&quot;&gt;
+                lib/factory_girl/syntax/sham.rb
+                &lt;/a&gt;
+        &lt;br /&gt;
+                &lt;a href=&quot;../files/lib/factory_girl/syntax/make_rb.html&quot;&gt;
+                lib/factory_girl/syntax/make.rb
+                &lt;/a&gt;
+        &lt;br /&gt;
+                &lt;a href=&quot;../files/lib/factory_girl/syntax/blueprint_rb.html&quot;&gt;
+                lib/factory_girl/syntax/blueprint.rb
+                &lt;/a&gt;
+        &lt;br /&gt;
+                &lt;a href=&quot;../files/lib/factory_girl/syntax/generate_rb.html&quot;&gt;
+                lib/factory_girl/syntax/generate.rb
+                &lt;/a&gt;
+        &lt;br /&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+
+        &lt;tr class=&quot;top-aligned-row&quot;&gt;
+            &lt;td&gt;&lt;strong&gt;Parent:&lt;/strong&gt;&lt;/td&gt;
+            &lt;td&gt;
+                Object
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+  &lt;!-- banner header --&gt;
+
+  &lt;div id=&quot;bodyContent&quot;&gt;
+
+  &lt;div id=&quot;contextContent&quot;&gt;
+
+   &lt;/div&gt;
+
+    &lt;div id=&quot;method-list&quot;&gt;
+      &lt;h3 class=&quot;section-bar&quot;&gt;Methods&lt;/h3&gt;
+
+      &lt;div class=&quot;name-list&quot;&gt;
+      &lt;a href=&quot;#M000005&quot;&gt;add_attribute&lt;/a&gt;&amp;nbsp;&amp;nbsp;
+      &lt;a href=&quot;#M000014&quot;&gt;alias&lt;/a&gt;&amp;nbsp;&amp;nbsp;
+      &lt;a href=&quot;#M000007&quot;&gt;association&lt;/a&gt;&amp;nbsp;&amp;nbsp;
+      &lt;a href=&quot;#M000009&quot;&gt;attributes_for&lt;/a&gt;&amp;nbsp;&amp;nbsp;
+      &lt;a href=&quot;#M000010&quot;&gt;build&lt;/a&gt;&amp;nbsp;&amp;nbsp;
+      &lt;a href=&quot;#M000011&quot;&gt;create&lt;/a&gt;&amp;nbsp;&amp;nbsp;
+      &lt;a href=&quot;#M000013&quot;&gt;default_strategy&lt;/a&gt;&amp;nbsp;&amp;nbsp;
+      &lt;a href=&quot;#M000004&quot;&gt;define&lt;/a&gt;&amp;nbsp;&amp;nbsp;
+      &lt;a href=&quot;#M000006&quot;&gt;method_missing&lt;/a&gt;&amp;nbsp;&amp;nbsp;
+      &lt;a href=&quot;#M000016&quot;&gt;next&lt;/a&gt;&amp;nbsp;&amp;nbsp;
+      &lt;a href=&quot;#M000008&quot;&gt;sequence&lt;/a&gt;&amp;nbsp;&amp;nbsp;
+      &lt;a href=&quot;#M000015&quot;&gt;sequence&lt;/a&gt;&amp;nbsp;&amp;nbsp;
+      &lt;a href=&quot;#M000012&quot;&gt;stub&lt;/a&gt;&amp;nbsp;&amp;nbsp;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+
+    &lt;!-- if includes --&gt;
+
+    &lt;div id=&quot;section&quot;&gt;
+
+    &lt;div id=&quot;class-list&quot;&gt;
+      &lt;h3 class=&quot;section-bar&quot;&gt;Classes and Modules&lt;/h3&gt;
+
+      Module &lt;a href=&quot;Factory/Syntax.html&quot; class=&quot;link&quot;&gt;Factory::Syntax&lt;/a&gt;&lt;br /&gt;
+</pre>
+<p>
+Class <a href=&#8220;Factory/AssociationDefinitionError.html&#8220;
+class=&#8220;link&#8221;>Factory::AssociationDefinitionError</a><br />
+Class <a href=&#8220;Factory/AttributeDefinitionError.html&#8220;
+class=&#8220;link&#8221;>Factory::AttributeDefinitionError</a><br /> Class
+<a href=&#8220;Factory/Sequence.html&#8220;
+class=&#8220;link&#8221;>Factory::Sequence</a><br /> Class <a
+href=&#8220;Factory/SequenceAbuseError.html&#8220;
+class=&#8220;link&#8221;>Factory::SequenceAbuseError</a><br />
+</p>
+<pre>
+    &lt;/div&gt;
+
+    &lt;div id=&quot;attribute-list&quot;&gt;
+      &lt;h3 class=&quot;section-bar&quot;&gt;Attributes&lt;/h3&gt;
+
+      &lt;div class=&quot;name-list&quot;&gt;
+        &lt;table&gt;
+        &lt;tr class=&quot;top-aligned-row context-row&quot;&gt;
+          &lt;td class=&quot;context-item-name&quot;&gt;definition_file_paths&lt;/td&gt;
+          &lt;td class=&quot;context-item-value&quot;&gt;&amp;nbsp;[RW]&amp;nbsp;&lt;/td&gt;
+          &lt;td class=&quot;context-item-desc&quot;&gt;
+</pre>
+<p>
+An Array of strings specifying locations that should be searched for
+factory definitions. By default, factory_girl will attempt to require
+&amp;quot;factories,&amp;quot; &amp;quot;test/factories,&amp;quot; and
+&amp;quot;spec/factories.&amp;quot; Only the first existing file will be
+loaded.
+</p>
+<p>
+</td>
+</p>
+<pre>
+        &lt;/tr&gt;
+        &lt;/table&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- if method_list --&gt;
+    &lt;div id=&quot;methods&quot;&gt;
+      &lt;h3 class=&quot;section-bar&quot;&gt;Public Class methods&lt;/h3&gt;
+
+      &lt;div id=&quot;method-M000014&quot; class=&quot;method-detail&quot;&gt;
+        &lt;a name=&quot;M000014&quot;&gt;&lt;/a&gt;
+
+        &lt;div class=&quot;method-heading&quot;&gt;
+          &lt;a href=&quot;Factory.src/M000014.html&quot; target=&quot;Code&quot; class=&quot;method-signature&quot;
+            onclick=&quot;popupCode('Factory.src/M000014.html');return false;&quot;&gt;
+          &lt;span class=&quot;method-name&quot;&gt;alias&lt;/span&gt;&lt;span class=&quot;method-args&quot;&gt;(pattern, replace)&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;method-description&quot;&gt;
+          &lt;p&gt;
+</pre>
+<p>
+Defines a new <a href=&#8220;Factory.html#M000014&#8220;>alias</a> for
+attributes. </p> <p> Arguments: </p> <ul> <li>pattern: <tt>Regexp</tt> A
+pattern that will be matched against attributes when looking for aliases.
+Contents captured in the pattern can be used in the <a
+href=&#8220;Factory.html#M000014&#8220;>alias</a>.
+</p>
+<p>
+</li> <li>replace: <tt>String</tt> The <a
+href=&#8220;Factory.html#M000014&#8220;>alias</a> that results from the
+matched pattern. Captured strings can be substituded like with
++String#sub+.
+</p>
+<p>
+</li> </ul> <p> Example: </p> <pre>
+</p>
+<pre>
+  Factory.alias /(.*)_confirmation/, '\1'
+</pre>
+<p>
+</pre> <p> factory_girl starts with aliases for foreign keys, so that a
+:user <a href=&#8220;Factory.html#M000007&#8220;>association</a> can be
+overridden by a :user_id parameter: </p> <pre>
+</p>
+<pre>
+  Factory.define :post do |p|
+    p.association :user
+  end
+
+  # The user association will not be built in this example. The user_id
+  # will be used instead.
+  Factory(:post, :user_id =&amp;gt; 1)
+</pre>
+<p>
+</pre>
+</p>
+<pre>
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div id=&quot;method-M000009&quot; class=&quot;method-detail&quot;&gt;
+        &lt;a name=&quot;M000009&quot;&gt;&lt;/a&gt;
+
+        &lt;div class=&quot;method-heading&quot;&gt;
+          &lt;a href=&quot;Factory.src/M000009.html&quot; target=&quot;Code&quot; class=&quot;method-signature&quot;
+            onclick=&quot;popupCode('Factory.src/M000009.html');return false;&quot;&gt;
+          &lt;span class=&quot;method-name&quot;&gt;attributes_for&lt;/span&gt;&lt;span class=&quot;method-args&quot;&gt;(name, overrides = {})&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;method-description&quot;&gt;
+          &lt;p&gt;
+</pre>
+<p>
+Generates and returns a Hash of attributes from this factory. Attributes
+can be individually overridden by passing in a Hash of attribute =&amp;gt;
+value pairs. </p> <p> Arguments: </p> <ul> <li>name: <tt>Symbol</tt> or
+<tt>String</tt> The name of the factory that should be used.
+</p>
+<p>
+</li> <li>overrides: <tt>Hash</tt> Attributes to overwrite for this set.
+</p>
+<p>
+</li> </ul> <p> Returns: <tt>Hash</tt> A set of attributes that can be used
+to <a href=&#8220;Factory.html#M000010&#8220;>build</a> an instance of the
+class this factory generates. </p>
+</p>
+<pre>
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div id=&quot;method-M000010&quot; class=&quot;method-detail&quot;&gt;
+        &lt;a name=&quot;M000010&quot;&gt;&lt;/a&gt;
+
+        &lt;div class=&quot;method-heading&quot;&gt;
+          &lt;a href=&quot;Factory.src/M000010.html&quot; target=&quot;Code&quot; class=&quot;method-signature&quot;
+            onclick=&quot;popupCode('Factory.src/M000010.html');return false;&quot;&gt;
+          &lt;span class=&quot;method-name&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;method-args&quot;&gt;(name, overrides = {})&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;method-description&quot;&gt;
+          &lt;p&gt;
+</pre>
+<p>
+Generates and returns an instance from this factory. Attributes can be
+individually overridden by passing in a Hash of attribute =&amp;gt; value
+pairs. </p> <p> Arguments: </p> <ul> <li>name: <tt>Symbol</tt> or
+<tt>String</tt> The name of the factory that should be used.
+</p>
+<p>
+</li> <li>overrides: <tt>Hash</tt> Attributes to overwrite for this
+instance.
+</p>
+<p>
+</li> </ul> <p> Returns: <tt>Object</tt> An instance of the class this
+factory generates, with generated attributes assigned. </p>
+</p>
+<pre>
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div id=&quot;method-M000011&quot; class=&quot;method-detail&quot;&gt;
+        &lt;a name=&quot;M000011&quot;&gt;&lt;/a&gt;
+
+        &lt;div class=&quot;method-heading&quot;&gt;
+          &lt;a href=&quot;Factory.src/M000011.html&quot; target=&quot;Code&quot; class=&quot;method-signature&quot;
+            onclick=&quot;popupCode('Factory.src/M000011.html');return false;&quot;&gt;
+          &lt;span class=&quot;method-name&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;method-args&quot;&gt;(name, overrides = {})&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;method-description&quot;&gt;
+          &lt;p&gt;
+</pre>
+<p>
+Generates, saves, and returns an instance from this factory. Attributes can
+be individually overridden by passing in a Hash of attribute =&amp;gt;
+value pairs. </p> <p> Instances are saved using the <tt>save!</tt> method,
+so ActiveRecord models will raise ActiveRecord::RecordInvalid exceptions
+for invalid attribute sets. </p> <p> Arguments: </p> <ul> <li>name:
+<tt>Symbol</tt> or <tt>String</tt> The name of the factory that should be
+used.
+</p>
+<p>
+</li> <li>overrides: <tt>Hash</tt> Attributes to overwrite for this
+instance.
+</p>
+<p>
+</li> </ul> <p> Returns: <tt>Object</tt> A saved instance of the class this
+factory generates, with generated attributes assigned. </p>
+</p>
+<pre>
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div id=&quot;method-M000013&quot; class=&quot;method-detail&quot;&gt;
+        &lt;a name=&quot;M000013&quot;&gt;&lt;/a&gt;
+
+        &lt;div class=&quot;method-heading&quot;&gt;
+          &lt;a href=&quot;Factory.src/M000013.html&quot; target=&quot;Code&quot; class=&quot;method-signature&quot;
+            onclick=&quot;popupCode('Factory.src/M000013.html');return false;&quot;&gt;
+          &lt;span class=&quot;method-name&quot;&gt;default_strategy&lt;/span&gt;&lt;span class=&quot;method-args&quot;&gt;(name, overrides = {})&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;method-description&quot;&gt;
+          &lt;p&gt;
+</pre>
+<p>
+Executes the default strategy for the given factory. This is usually <a
+href=&#8220;Factory.html#M000011&#8220;>create</a>, but it can be
+overridden for each factory. </p> <p> Arguments: </p> <ul> <li>name:
+<tt>Symbol</tt> or <tt>String</tt> The name of the factory that should be
+used.
+</p>
+<p>
+</li> <li>overrides: <tt>Hash</tt> Attributes to overwrite for this
+instance.
+</p>
+<p>
+</li> </ul> <p> Returns: <tt>Object</tt> The result of the default
+strategy. </p>
+</p>
+<pre>
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div id=&quot;method-M000004&quot; class=&quot;method-detail&quot;&gt;
+        &lt;a name=&quot;M000004&quot;&gt;&lt;/a&gt;
+
+        &lt;div class=&quot;method-heading&quot;&gt;
+          &lt;a href=&quot;Factory.src/M000004.html&quot; target=&quot;Code&quot; class=&quot;method-signature&quot;
+            onclick=&quot;popupCode('Factory.src/M000004.html');return false;&quot;&gt;
+          &lt;span class=&quot;method-name&quot;&gt;define&lt;/span&gt;&lt;span class=&quot;method-args&quot;&gt;(name, options = {}) {|instance| ...}&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;method-description&quot;&gt;
+          &lt;p&gt;
+</pre>
+<p>
+Defines a new factory that can be used by the <a
+href=&#8220;Factory.html#M000010&#8220;>build</a> strategies (<a
+href=&#8220;Factory.html#M000011&#8220;>create</a> and <a
+href=&#8220;Factory.html#M000010&#8220;>build</a>) to <a
+href=&#8220;Factory.html#M000010&#8220;>build</a> new objects. </p> <p>
+Arguments: </p> <ul> <li>name: <tt>Symbol</tt> or <tt>String</tt> A unique
+name used to identify this factory.
+</p>
+<p>
+</li> <li>options: <tt>Hash</tt>
+</p>
+<p>
+</li> </ul> <p> Options: </p> <ul> <li>class: <tt>Symbol</tt>,
+<tt>Class</tt>, or <tt>String</tt> The class that will be used when
+generating instances for this factory. If not specified, the class will be
+guessed from the factory name.
+</p>
+<p>
+</li> <li>parent: <tt>Symbol</tt> The parent factory. If specified, the
+attributes from the parent factory will be copied to the current one with
+an ability to override them.
+</p>
+<p>
+</li> <li><a href=&#8220;Factory.html#M000013&#8220;>default_strategy</a>:
+<tt>Symbol</tt> The strategy that will be used by the <a
+href=&#8220;Factory.html&#8220;>Factory</a> shortcut method. Defaults to
+:<a href=&#8220;Factory.html#M000011&#8220;>create</a>.
+</p>
+<p>
+</li> </ul> <p> Yields: <tt>&lt;a
+href=&quot;Factory.html&quot;&gt;Factory&lt;/a&gt;</tt> The newly created
+factory. </p>
+</p>
+<pre>
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div id=&quot;method-M000016&quot; class=&quot;method-detail&quot;&gt;
+        &lt;a name=&quot;M000016&quot;&gt;&lt;/a&gt;
+
+        &lt;div class=&quot;method-heading&quot;&gt;
+          &lt;a href=&quot;Factory.src/M000016.html&quot; target=&quot;Code&quot; class=&quot;method-signature&quot;
+            onclick=&quot;popupCode('Factory.src/M000016.html');return false;&quot;&gt;
+          &lt;span class=&quot;method-name&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;method-args&quot;&gt;(sequence)&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;method-description&quot;&gt;
+          &lt;p&gt;
+</pre>
+<p>
+Generates and returns the <a
+href=&#8220;Factory.html#M000016&#8220;>next</a> value in a <a
+href=&#8220;Factory.html#M000008&#8220;>sequence</a>. </p> <p> Arguments:
+</p> <pre>
+</p>
+<pre>
+  name: (Symbol)
+    The name of the sequence that a value should be generated for.
+</pre>
+<p>
+</pre> <p> Returns: </p> <pre>
+</p>
+<pre>
+  The next value in the sequence. (Object)
+</pre>
+<p>
+</pre>
+</p>
+<pre>
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div id=&quot;method-M000015&quot; class=&quot;method-detail&quot;&gt;
+        &lt;a name=&quot;M000015&quot;&gt;&lt;/a&gt;
+
+        &lt;div class=&quot;method-heading&quot;&gt;
+          &lt;a href=&quot;Factory.src/M000015.html&quot; target=&quot;Code&quot; class=&quot;method-signature&quot;
+            onclick=&quot;popupCode('Factory.src/M000015.html');return false;&quot;&gt;
+          &lt;span class=&quot;method-name&quot;&gt;sequence&lt;/span&gt;&lt;span class=&quot;method-args&quot;&gt;(name, &amp;amp;block)&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;method-description&quot;&gt;
+          &lt;p&gt;
+</pre>
+<p>
+Defines a new <a href=&#8220;Factory.html#M000008&#8220;>sequence</a> that
+can be used to generate unique values in a specific format. </p> <p>
+Arguments: </p> <pre>
+</p>
+<pre>
+  name: (Symbol)
+    A unique name for this sequence. This name will be referenced when
+    calling next to generate new values from this sequence.
+  block: (Proc)
+    The code to generate each value in the sequence. This block will be
+    called with a unique number each time a value in the sequence is to be
+    generated. The block should return the generated value for the
+    sequence.
+</pre>
+<p>
+</pre> <p> Example: </p> <pre>
+</p>
+<pre>
+  Factory.sequence(:email) {|n| &amp;quot;somebody_#{n}@example.com&amp;quot; }
+</pre>
+<p>
+</pre>
+</p>
+<pre>
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div id=&quot;method-M000012&quot; class=&quot;method-detail&quot;&gt;
+        &lt;a name=&quot;M000012&quot;&gt;&lt;/a&gt;
+
+        &lt;div class=&quot;method-heading&quot;&gt;
+          &lt;a href=&quot;Factory.src/M000012.html&quot; target=&quot;Code&quot; class=&quot;method-signature&quot;
+            onclick=&quot;popupCode('Factory.src/M000012.html');return false;&quot;&gt;
+          &lt;span class=&quot;method-name&quot;&gt;stub&lt;/span&gt;&lt;span class=&quot;method-args&quot;&gt;(name, overrides = {})&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;method-description&quot;&gt;
+          &lt;p&gt;
+</pre>
+<p>
+Generates and returns an object with all attributes from this factory
+stubbed out. Attributes can be individually overridden by passing in a Hash
+of attribute =&amp;gt; value pairs. </p> <p> Arguments: </p> <ul> <li>name:
+<tt>Symbol</tt> or <tt>String</tt> The name of the factory that should be
+used.
+</p>
+<p>
+</li> <li>overrides: <tt>Hash</tt> Attributes to overwrite for this
+instance.
+</p>
+<p>
+</li> </ul> <p> Returns: <tt>Object</tt> An object with generated
+attributes stubbed out. </p>
+</p>
+<pre>
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;h3 class=&quot;section-bar&quot;&gt;Public Instance methods&lt;/h3&gt;
+
+      &lt;div id=&quot;method-M000005&quot; class=&quot;method-detail&quot;&gt;
+        &lt;a name=&quot;M000005&quot;&gt;&lt;/a&gt;
+
+        &lt;div class=&quot;method-heading&quot;&gt;
+          &lt;a href=&quot;Factory.src/M000005.html&quot; target=&quot;Code&quot; class=&quot;method-signature&quot;
+            onclick=&quot;popupCode('Factory.src/M000005.html');return false;&quot;&gt;
+          &lt;span class=&quot;method-name&quot;&gt;add_attribute&lt;/span&gt;&lt;span class=&quot;method-args&quot;&gt;(name, value = nil, &amp;amp;block)&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;method-description&quot;&gt;
+          &lt;p&gt;
+</pre>
+<p>
+Adds an attribute that should be assigned on generated instances for this
+factory. </p> <p> This method should be called with either a value or
+block, but not both. If called with a block, the attribute will be
+generated &amp;quot;lazily,&amp;quot; whenever an instance is generated.
+Lazy attribute blocks will not be called if that attribute is overriden for
+a specific instance. </p> <p> When defining lazy attributes, an instance of
+Factory::Proxy will be yielded, allowing associations to be built using the
+correct <a href=&#8220;Factory.html#M000010&#8220;>build</a> strategy. </p>
+<p> Arguments: </p> <ul> <li>name: <tt>Symbol</tt> or <tt>String</tt> The
+name of this attribute. This will be assigned using
+:&amp;quot;#{name}=&amp;quot; for generated instances.
+</p>
+<p>
+</li> <li>value: <tt>Object</tt> If no block is given, this value will be
+used for this attribute.
+</p>
+<p>
+</li> </ul>
+</p>
+<pre>
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div id=&quot;method-M000007&quot; class=&quot;method-detail&quot;&gt;
+        &lt;a name=&quot;M000007&quot;&gt;&lt;/a&gt;
+
+        &lt;div class=&quot;method-heading&quot;&gt;
+          &lt;a href=&quot;Factory.src/M000007.html&quot; target=&quot;Code&quot; class=&quot;method-signature&quot;
+            onclick=&quot;popupCode('Factory.src/M000007.html');return false;&quot;&gt;
+          &lt;span class=&quot;method-name&quot;&gt;association&lt;/span&gt;&lt;span class=&quot;method-args&quot;&gt;(name, options = {})&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;method-description&quot;&gt;
+          &lt;p&gt;
+</pre>
+<p>
+Adds an attribute that builds an <a
+href=&#8220;Factory.html#M000007&#8220;>association</a>. The associated
+instance will be built using the same <a
+href=&#8220;Factory.html#M000010&#8220;>build</a> strategy as the parent
+instance. </p> <p> Example: </p> <pre>
+</p>
+<pre>
+  Factory.define :user do |f|
+    f.name 'Joey'
+  end
+
+  Factory.define :post do |f|
+    f.association :author, :factory =&amp;gt; :user
+  end
+</pre>
+<p>
+</pre> <p> Arguments: </p> <ul> <li>name: <tt>Symbol</tt> The name of this
+attribute.
+</p>
+<p>
+</li> <li>options: <tt>Hash</tt>
+</p>
+<p>
+</li> </ul> <p> Options: </p> <ul> <li>factory: <tt>Symbol</tt> or
+<tt>String</tt>
+</p>
+<p>
+<pre>
+</p>
+<pre>
+ The name of the factory to use when building the associated instance.
+ If no name is given, the name of the attribute is assumed to be the
+ name of the factory. For example, a &amp;quot;user&amp;quot; association will by
+ default use the &amp;quot;user&amp;quot; factory.
+</pre>
+<p>
+</pre> </li> </ul>
+</p>
+<pre>
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div id=&quot;method-M000006&quot; class=&quot;method-detail&quot;&gt;
+        &lt;a name=&quot;M000006&quot;&gt;&lt;/a&gt;
+
+        &lt;div class=&quot;method-heading&quot;&gt;
+          &lt;a href=&quot;Factory.src/M000006.html&quot; target=&quot;Code&quot; class=&quot;method-signature&quot;
+            onclick=&quot;popupCode('Factory.src/M000006.html');return false;&quot;&gt;
+          &lt;span class=&quot;method-name&quot;&gt;method_missing&lt;/span&gt;&lt;span class=&quot;method-args&quot;&gt;(name, *args, &amp;amp;block)&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;method-description&quot;&gt;
+          &lt;p&gt;
+</pre>
+<p>
+Calls <a href=&#8220;Factory.html#M000005&#8220;>add_attribute</a> using
+the missing method name as the name of the attribute, so that: </p> <pre>
+</p>
+<pre>
+  Factory.define :user do |f|
+    f.name 'Billy Idol'
+  end
+</pre>
+<p>
+</pre> <p> and: </p> <pre>
+</p>
+<pre>
+  Factory.define :user do |f|
+    f.add_attribute :name, 'Billy Idol'
+  end
+</pre>
+<p>
+</pre> <p> are equivilent. </p>
+</p>
+<pre>
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div id=&quot;method-M000008&quot; class=&quot;method-detail&quot;&gt;
+        &lt;a name=&quot;M000008&quot;&gt;&lt;/a&gt;
+
+        &lt;div class=&quot;method-heading&quot;&gt;
+          &lt;a href=&quot;Factory.src/M000008.html&quot; target=&quot;Code&quot; class=&quot;method-signature&quot;
+            onclick=&quot;popupCode('Factory.src/M000008.html');return false;&quot;&gt;
+          &lt;span class=&quot;method-name&quot;&gt;sequence&lt;/span&gt;&lt;span class=&quot;method-args&quot;&gt;(name, &amp;amp;block)&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;method-description&quot;&gt;
+          &lt;p&gt;
+</pre>
+<p>
+Adds an attribute that will have unique values generated by a <a
+href=&#8220;Factory.html#M000008&#8220;>sequence</a> with a specified
+format. </p> <p> The result of: </p> <pre>
+</p>
+<pre>
+  Factory.define :user do |f|
+   f.sequence(:email) { |n| &amp;quot;person#{n}@example.com&amp;quot; }
+  end
+</pre>
+<p>
+</pre> <p> Is equal to: </p> <pre>
+</p>
+<pre>
+  Factory.sequence(:email) { |n| &amp;quot;person#{n}@example.com&amp;quot; }
+
+  Factory.define :user do |f|
+   f.email { Factory.next(:email) }
+  end
+</pre>
+<p>
+</pre> <p> Except that no globally available <a
+href=&#8220;Factory.html#M000008&#8220;>sequence</a> will be defined. </p>
+</p>
+<pre>
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+</pre>
+<p>
+<div id=&#8220;validator-badges&#8221;>
+</p>
+<pre>
+  &lt;p&gt;&lt;small&gt;&lt;a href=&quot;http://validator.w3.org/check/referer&quot;&gt;[Validate]&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+</pre>
+<p>
+</div>
+</p>
+<p>
+</body> </html>
+</p>
+
+    </div>
+    
+
+    
+
+    
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+    </div>
+  </body>
+</html>

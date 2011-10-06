@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>GData::HTTP::Request</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+    <script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>     
+    <div class="banner">
+        <h1>
+            <span class="type">Class</span> 
+            GData::HTTP::Request 
+            
+                <span class="parent">&lt; 
+                    
+                    Object
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/lib/gdata/http/request_rb.html">lib/gdata/http/request.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+    
+    <div class="description">
+        <p>
+Very simple class to hold everything about an <a
+href="../HTTP.html">HTTP</a> request.
+</p>
+
+    </div>
+    
+
+    
+
+    
+    
+
+    
+    
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+    
+        <dt>C</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000036">calculate_length!</a>,</li>
+                
+                <li><a href="#M000035">chunked=</a>,</li>
+                
+                <li><a href="#M000034">chunked?</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>N</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000033">new</a></li>
+                
+            </ul>
+        </dd>
+    
+    </dl>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="sectiontitle">Attributes</div>
+    <table border='0' cellpadding='5'>
+        
+        <tr valign='top'>
+            <td class='attr-rw'>
+                [RW]
+            </td>
+            <td class='attr-name'>url</td>
+            <td class='attr-desc'><p>
+The URL of the request.
+</p></td>
+        </tr>
+        
+        <tr valign='top'>
+            <td class='attr-rw'>
+                [RW]
+            </td>
+            <td class='attr-name'>body</td>
+            <td class='attr-desc'><p>
+The body of the request.
+</p></td>
+        </tr>
+        
+        <tr valign='top'>
+            <td class='attr-rw'>
+                [RW]
+            </td>
+            <td class='attr-name'>method</td>
+            <td class='attr-desc'><p>
+The <a href="../HTTP.html">HTTP</a> method being used in the request.
+</p></td>
+        </tr>
+        
+        <tr valign='top'>
+            <td class='attr-rw'>
+                [RW]
+            </td>
+            <td class='attr-name'>headers</td>
+            <td class='attr-desc'><p>
+The <a href="../HTTP.html">HTTP</a> headers of the request.
+</p></td>
+        </tr>
+        
+    </table>
+    
+
+    
+            <div class="sectiontitle">Class Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="M000033">
+                    
+                    <a name="M000033"></a><b>new</b>(url, options = {})
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Only the URL itself is required, everything else is optional.
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000033_source')" id="l_M000033_source">show</a>
+                        
+                    </p>
+                    <div id="M000033_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/gdata/http/request.rb, line 33</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">url</span>, <span class="ruby-identifier">options</span> = {})
+        <span class="ruby-ivar">@url</span> = <span class="ruby-identifier">url</span>
+        <span class="ruby-identifier">options</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+          <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{key}=&quot;</span>, <span class="ruby-identifier">value</span>)
+        <span class="ruby-keyword kw">end</span>
+        
+        <span class="ruby-ivar">@method</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">:get</span>
+        <span class="ruby-ivar">@headers</span> <span class="ruby-operator">||=</span> {}
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="sectiontitle">Instance Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="M000036">
+                    
+                    <a name="M000036"></a><b>calculate_length!</b>()
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Calculates and sets the length of the body.
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000036_source')" id="l_M000036_source">show</a>
+                        
+                    </p>
+                    <div id="M000036_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/gdata/http/request.rb, line 62</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">calculate_length!</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">not</span> <span class="ruby-ivar">@headers</span>[<span class="ruby-value str">'Content-Length'</span>] <span class="ruby-keyword kw">and</span> <span class="ruby-keyword kw">not</span> <span class="ruby-identifier">chunked?</span> \
+          <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">method</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">:get</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">method</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">:delete</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@body</span>
+            <span class="ruby-ivar">@headers</span>[<span class="ruby-value str">'Content-Length'</span>] = <span class="ruby-ivar">@body</span>.<span class="ruby-identifier">length</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-ivar">@headers</span>[<span class="ruby-value str">'Content-Length'</span>] = <span class="ruby-value">0</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000035">
+                    
+                    <a name="M000035"></a><b>chunked=</b>(enabled)
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Sets if the request is using chunked transfer-encoding.
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000035_source')" id="l_M000035_source">show</a>
+                        
+                    </p>
+                    <div id="M000035_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/gdata/http/request.rb, line 53</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">chunked=</span>(<span class="ruby-identifier">enabled</span>)
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">enabled</span>
+          <span class="ruby-ivar">@headers</span>[<span class="ruby-value str">'Transfer-Encoding'</span>] = <span class="ruby-value str">'chunked'</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-ivar">@headers</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value str">'Transfer-Encoding'</span>)
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000034">
+                    
+                    <a name="M000034"></a><b>chunked?</b>()
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Returns whether or not a request is chunked.
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000034_source')" id="l_M000034_source">show</a>
+                        
+                    </p>
+                    <div id="M000034_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/gdata/http/request.rb, line 44</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">chunked?</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@headers</span>[<span class="ruby-value str">'Transfer-Encoding'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'chunked'</span>
+          <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+</div>
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,11 @@
+<% form_for @user_session do |form| %>  
+<ol>
+   <li>  
+     <%= form.label :login, "Login" %>  
+     <%= form.text_field :openid_identifier %>  
+   </li>  
+   <li>  
+     <%= form.submit 'Login with OpenID' %>
+   </li>  
+</ol>
+<% end -%>

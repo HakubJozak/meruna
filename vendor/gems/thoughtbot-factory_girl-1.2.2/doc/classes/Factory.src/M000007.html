@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>association (Factory)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/factory_girl/factory.rb, line 158</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">association</span> (<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span> = {})
+    <span class="ruby-identifier">factory_name</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:factory</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">name</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">factory_name_for</span>(<span class="ruby-identifier">factory_name</span>) <span class="ruby-operator">==</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">factory_name</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">AssociationDefinitionError</span>, <span class="ruby-node">&quot;Self-referencing association '#{name}' in factory '#{self.factory_name}'&quot;</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-ivar">@attributes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Attribute</span><span class="ruby-operator">::</span><span class="ruby-constant">Association</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">factory_name</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

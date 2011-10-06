@@ -1,0 +1,6 @@
+class Admin::<%= clazz %> < Admin::BaseController
+  active_scaffold '<%= model.to_s %>' do |c|
+    c.columns = []
+    c.list.columns = []
+  end
+end

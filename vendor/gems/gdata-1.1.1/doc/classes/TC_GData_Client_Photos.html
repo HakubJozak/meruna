@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>TC_GData_Client_Photos</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+    <script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>     
+    <div class="banner">
+        <h1>
+            <span class="type">Class</span> 
+            TC_GData_Client_Photos 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/test/tc_gdata_client_photos_rb.html">test/tc_gdata_client_photos.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+    
+
+    
+
+    
+    
+
+    
+    
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+    
+        <dt>S</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000017">setup</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>T</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000018">test_authenticated_dropbox_feed</a>,</li>
+                
+                <li><a href="#M000019">test_photo_upload</a>,</li>
+                
+                <li><a href="#M000020">test_photo_upload_with_metadata</a></li>
+                
+            </ul>
+        </dd>
+    
+    </dl>
+    
+
+    
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+        
+        <li>
+            
+            <a href="TestHelper.html">TestHelper</a>
+            
+            START:includes
+        </li>
+        
+    </ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+            <div class="sectiontitle">Instance Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="M000017">
+                    
+                    <a name="M000017"></a><b>setup</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000017_source')" id="l_M000017_source">show</a>
+                        
+                    </p>
+                    <div id="M000017_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File test/tc_gdata_client_photos.rb, line 22</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">setup</span>
+    <span class="ruby-ivar">@gp</span> = <span class="ruby-constant">GData</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Photos</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-ivar">@gp</span>.<span class="ruby-identifier">source</span> = <span class="ruby-value str">'Ruby Client Unit Tests'</span>
+    <span class="ruby-ivar">@gp</span>.<span class="ruby-identifier">clientlogin</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">get_username</span>(), <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">get_password</span>())
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000018">
+                    
+                    <a name="M000018"></a><b>test_authenticated_dropbox_feed</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000018_source')" id="l_M000018_source">show</a>
+                        
+                    </p>
+                    <div id="M000018_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File test/tc_gdata_client_photos.rb, line 28</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_authenticated_dropbox_feed</span>
+    <span class="ruby-identifier">feed</span> = <span class="ruby-ivar">@gp</span>.<span class="ruby-identifier">get</span>(<span class="ruby-value str">'http://picasaweb.google.com/data/feed/api/user/default/albumid/default?max-results=1'</span>).<span class="ruby-identifier">to_xml</span>
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">assert_not_nil</span>(<span class="ruby-identifier">feed</span>, <span class="ruby-value str">'feed can not be nil'</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000019">
+                    
+                    <a name="M000019"></a><b>test_photo_upload</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000019_source')" id="l_M000019_source">show</a>
+                        
+                    </p>
+                    <div id="M000019_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File test/tc_gdata_client_photos.rb, line 33</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_photo_upload</span>
+    <span class="ruby-identifier">test_image</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword kw">__FILE__</span>), <span class="ruby-value str">'testimage.jpg'</span>)
+    <span class="ruby-identifier">mime_type</span> = <span class="ruby-value str">'image/jpeg'</span>
+    
+    <span class="ruby-identifier">response</span> = <span class="ruby-ivar">@gp</span>.<span class="ruby-identifier">post_file</span>(<span class="ruby-value str">'http://picasaweb.google.com/data/feed/api/user/default/albumid/default'</span>, 
+      <span class="ruby-identifier">test_image</span>, <span class="ruby-identifier">mime_type</span>).<span class="ruby-identifier">to_xml</span>
+    
+    <span class="ruby-identifier">edit_uri</span> = <span class="ruby-identifier">response</span>.<span class="ruby-identifier">elements</span>[<span class="ruby-value str">&quot;link[@rel='edit']&quot;</span>].<span class="ruby-identifier">attributes</span>[<span class="ruby-value str">'href'</span>]
+    
+    <span class="ruby-ivar">@gp</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">edit_uri</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000020">
+                    
+                    <a name="M000020"></a><b>test_photo_upload_with_metadata</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000020_source')" id="l_M000020_source">show</a>
+                        
+                    </p>
+                    <div id="M000020_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File test/tc_gdata_client_photos.rb, line 45</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_photo_upload_with_metadata</span>
+    <span class="ruby-identifier">test_image</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword kw">__FILE__</span>), <span class="ruby-value str">'testimage.jpg'</span>)
+    <span class="ruby-identifier">mime_type</span> = <span class="ruby-value str">'image/jpeg'</span>
+    
+    <span class="ruby-identifier">entry</span> = <span class="ruby-value str">&quot;&lt;entry xmlns='http://www.w3.org/2005/Atom'&gt;\n&lt;title&gt;ruby-client-testing.jpg&lt;/title&gt;\n&lt;summary&gt;Test case for Ruby Client Library.&lt;/summary&gt;\n&lt;category scheme=\&quot;http://schemas.google.com/g/2005#kind\&quot;\nterm=\&quot;http://schemas.google.com/photos/2007#photo\&quot;/&gt;\n&lt;/entry&gt;\n&quot;</span>
+    
+    <span class="ruby-identifier">response</span> = <span class="ruby-ivar">@gp</span>.<span class="ruby-identifier">post_file</span>(<span class="ruby-value str">'http://picasaweb.google.com/data/feed/api/user/default/albumid/default'</span>, 
+      <span class="ruby-identifier">test_image</span>, <span class="ruby-identifier">mime_type</span>, <span class="ruby-identifier">entry</span>).<span class="ruby-identifier">to_xml</span>
+    
+    <span class="ruby-identifier">edit_uri</span> = <span class="ruby-identifier">response</span>.<span class="ruby-identifier">elements</span>[<span class="ruby-value str">&quot;link[@rel='edit']&quot;</span>].<span class="ruby-identifier">attributes</span>[<span class="ruby-value str">'href'</span>]
+    
+    <span class="ruby-ivar">@gp</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">edit_uri</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+</div>
+    </div>
+  </body>
+</html>    

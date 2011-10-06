@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <!-- TODO - dynamic title -->
+    <title>Football for development</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-language" content="en"> 
+        <meta name="author" content="Studio TOMATO s.r.o.">
+        <meta name="author" content="INEX-SDA">
+        <meta name="author" content="Football for Development">
+	<meta http-equiv="imagetoolbar" content="no" />  
+        <%= render :partial => "public/includes" %>
+      </head>
+      <body>
+        <div id="main">
+          <div id="header">
+            <a href="/" id="logo" title="Football for development - Main Page">
+              <img src="/images/logo-footbal-for-development.gif"
+              alt="Football for Development Logo" width="236" height="91" />
+            </a>
+
+            <%= main_menu %>
+            <%= render :partial => 'public/page_control' %>
+            <%= render :partial => 'public/slides' %>
+          </div>
+
+          <div id="content">           
+	    <div class="box">
+	      <h2 id="h2-news" class="header">
+                <span>News</span>
+              </h2>
+              <%= render_headlines %>
+	    </div>
+            <div class="cb"></div>
+          </div>
+
+          <%= render :partial => 'public/footer', :locals => { :facebook => true }  %>
+          </div>
+
+          <%= render :partial => 'public/google_analytics' %> 
+        </body>
+      </html>
+<%=  %> 

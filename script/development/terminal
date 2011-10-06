@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd /home/jakub/prog/INEX/meruna
+gnome-terminal --tab-with-profile-internal-id=Meruna --title=Autotest -e autotest --tab-with-profile-internal-id=Meruna --title=Server -e script/server --tab-with-profile-internal-id=Meruna

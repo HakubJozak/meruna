@@ -1,0 +1,39 @@
+<% main_div_class('downloads') %>
+
+<h2 id="h2-manuals" class='header'>
+  <span>Manuals</span>
+</h2>
+
+<p class='info'>Football for Development aims to raise awareness and about global development and dependent issues. To reach this goal or as we say, "to score", we produced several documents that are supposed to help teachers and educators to tackle the issues and help them to organize workshops on high schools. In teacher's manual, we are presenting complex methodology aimed on youngsters and high school teachers. However, even we did our best, our tutors are always ready to help and explain the documents in detail. Please do not hesitate to contact us!</p>
+
+<%= render :partial => "public/localize" %>
+
+<div class='decorationTable'>
+  <img src="/images/line-decoration-div.gif" alt="line-decoration-div" width="600" height="4" />
+  <table>
+    <tr>
+      <th class='a1'></th>
+      <th class='a2'>Name</th>
+      <th class='a3'>Released</th>
+      <th class='a4'>Language</th>
+      <th class='a5'>Download</th>
+    </tr>
+    
+    <% @documents.each do |doc| -%>    
+      <% content_tag :tr, :class => cycle_with_first_last(doc, @documents, :odd => 'one', :even => 'two', :last => 'last') do %>
+        <td class='a1'>
+          <%= image_tag(doc.document_type.icon.url, :size => '22x22', :alt => doc.name) %>
+        </td>
+        <td class='a2'><%= doc.name %></td>
+        <td class='a3'><%=  "#{time_ago_in_words(doc.created_at)} ago" %></td>
+        <td class='a4'><%= doc.language.name.capitalize %></td>
+        <td class='a5'>
+          <% link_to public_download_document_url(doc) do -%>
+             <img src="/images/download-icon.gif" alt="download-icon" width="13" height="15" />Download</a>
+          <% end -%>
+        </td>
+      <% end -%>
+    <% end -%>
+  </table>
+  <img class='imgBottom' src="/images/line-decoration-div.gif" alt="line-decoration-div" width="600" height="4" />
+</div>

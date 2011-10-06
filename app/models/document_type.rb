@@ -1,0 +1,2 @@
+class DocumentType < ContentType
+end

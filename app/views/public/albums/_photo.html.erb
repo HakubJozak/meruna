@@ -1,0 +1,11 @@
+<div class="<%= clazz %>">
+  <div class='correct'></div>
+  <% link_to( photo.picture.url, :title => photo.description, :rel => 'lightbox[album]') do%>
+    <%= image_tag( photo.picture.url(:thumb), :alt => photo.description, :size => '157x112' )%>
+  <% end -%>
+  <h3>
+    <%= photo.description %>
+  </h3>
+  <div class='date'>06. 2010</div>
+  <div class='views'>78</div>
+</div>

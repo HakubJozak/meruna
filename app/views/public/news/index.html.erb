@@ -1,0 +1,13 @@
+<% title("Listing Google Calendar") -%>
+
+<p>Merged feed from project Google Calendar and press releases.</p>
+
+<%=
+   collection_table(@events) do |t|
+      t.header :title
+      t.header :content
+      t.header :startTime
+      t.header :endTime
+      t.rows.alternate = :odd
+   end
+%>

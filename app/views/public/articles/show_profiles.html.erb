@@ -1,0 +1,24 @@
+<h2>Organizers</h2>
+<br/>
+<br/>
+
+<% @profiles.each do |profile| %>
+<%= image_tag profile.logo.url %>
+<div class="decorationTable">
+<table>
+  <% [ :name, :contact_person, :contact_email, :address, :homepage, :phone ].each do |attr| %>
+    <tr>
+      <th><%= attr.to_s.humanize %></th>
+      <td><%= profile_attribute(profile, attr) %></td>
+    </tr>
+  <% end -%>
+
+  <tr>
+    <th></th>
+    <td><%= profile.description %></td>
+  </tr>
+
+</table>
+  
+</div>
+<% end -%>

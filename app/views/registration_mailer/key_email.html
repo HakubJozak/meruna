@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Registration to F4D Website</title>
+  </head>
+  <body>
+    <h1>Greetings!</h1>
+    <p>
+      You have been granted a possibility to join "Football for Development"
+      content managment team. Please use the link below to register using
+      your Google account. If clicking on the link doesn't work, please
+      copy&amp;paste it to your browser.
+    </p>
+
+    <%= url_for(:controller => :users, :action => :new, :code => @registration_key.code, :only_path => false) %>
+
+    <p>Thank you for helping us with content creation and content managment!</p>
+
+    <p>best regards</p>
+
+    Technical Team
+  </body>
+</html>

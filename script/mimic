@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+# Mimics OpenID web access
+
+[ 'https://www.google.com/accounts/o8/id',
+  'https://www.google.com/accounts/o8/ud' ].each_with_index do |url,i|
+  `curl #{url} >> test/fakeweb/#{i+1}`
+end
+

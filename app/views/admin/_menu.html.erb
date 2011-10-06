@@ -1,0 +1,23 @@
+        <ul id='menu'>
+          <% menu('Navigation') do %>
+             <%=  menu_item(:view_public, root_url) -%>
+          <% end  -%>
+          <% menu('Content') do %>
+	     <%= model_menu_item Headline %>
+	     <%= model_menu_item Profile %>
+             <%= model_menu_item Document %>
+             <%= model_menu_item PressRelease %>
+             <%= model_menu_item Article %>
+             <%= model_menu_item Calendar %>
+	     <%= model_menu_item Album %>
+             <%= model_menu_item Banner %>
+          <%  end -%>
+          <% menu('Administration') do %>
+             <%= model_menu_item User %>
+             <%= model_menu_item RegistrationKey %>
+             <%= model_menu_item Language %>
+             <%= model_menu_item NewsType %>
+             <%= model_menu_item DocumentType %>
+          <% end %>
+        </ul
+

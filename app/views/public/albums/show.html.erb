@@ -1,0 +1,19 @@
+<% main_div_class('photogalleries') %>
+
+<% link_to public_albums_path do -%>
+<h2 id="h2-photogallery" class='header'>
+  <span>Photo Gallery</span>
+</h2>
+<% end -%>
+
+<h2 id="photogalleryName">
+  &gt; <%= @album.name %>
+</h2>
+<div id='photogalleryInfo'>
+  <%= render :partial => "album_info", :object => @album %>
+</div>
+
+<div class='photogallerySet'>
+  <%= render_photos(@album.photos) -%>
+</div>
+<div class='cb'></div>

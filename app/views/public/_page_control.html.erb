@@ -1,0 +1,40 @@
+<%# image_tag 'beta-ribbon.png', :style => 'position: absolute; top: 0; left: 0; border: 0;', :alt => 'beta' %>
+
+<div id='pageControl'>
+
+  <div id='searchContent'>
+    <% form_tag search_path, :method => :get do -%>
+      <fieldset>
+	<label id="searchName">Search</label>
+        <%= text_field_tag :q, @query %>
+	<input id="searchSubmit" type='submit' value="" />
+      </fieldset>
+    <% end %>
+  </div>
+
+  <div id='translateContent'>
+  <div id="google_translate_element"></div>  
+  </div>
+  
+  <script>
+    function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: "en"}, "google_translate_element");
+    };
+  </script>
+  <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+  <% unless current_user -%>
+    <%= link_to 'LOGIN', login_url, :id => 'searchButton' %>
+
+    <% mail_to "FootballforDevelopment-subscribe@lists.vidc.org", 
+               "Subscribe to Newsletter",
+               :subject => "Subscribe Football for Development newsletter",
+               :title => "To subscribe you can also email to FootballforDevelopment-subscribe@lists.vidc.org"
+    %> 
+  <% else -%>
+    <%= link_to 'Administration', admin_path, :id => 'searchButton' %>
+  <% end -%> 
+
+
+</div>

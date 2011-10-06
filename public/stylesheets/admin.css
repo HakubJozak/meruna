@@ -1,0 +1,55 @@
+body { 
+ background-color: #E1F2E0;
+ color: green;
+ font-family: Verdana, Helvetica, Arial;
+ font-size: 14px;
+}
+
+
+div.container { 
+ background-color: white;
+}
+
+.thumb {
+  border: 1px solid #DDDDDD
+}
+
+
+a img {
+  border: none;
+}
+
+a {
+  color: #0000FF;
+}
+
+#header { 
+ background-color: white;
+}
+
+#nav a { 
+ text-decoration: none;
+ color: #FFFFFF;
+}
+
+#footer a { 
+ color: #FFFFFF;
+}
+
+#nav, #footer { 
+ background-color: #006838;
+ color: white;
+}
+
+#nav {
+ font-size: 90%;
+ text-align: right;
+}
+
+#footer { 
+ font-size: 70%;
+ text-align: center;
+}
+
+
+

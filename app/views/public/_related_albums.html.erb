@@ -1,0 +1,32 @@
+<hr class='line' />			
+<h2 id="h2-related-news" class='header'>
+  <span>related news</span>
+</h2>
+<div id='relatedNews'>
+  <!--
+  <a href="#">Empire Strikes Back</a>
+  <a href="#">Rome Watches Africa</a>
+  <a href="#">Empire Strikes Back</a>
+  -->
+</div>			
+
+
+<hr class='line' />
+<h2 id="h2-see-also" class='header'>
+  <span>see also...</span>
+</h2>
+<div id="seeAlso">
+  <% @random_albums.each do |album| -%>
+  <div class='photo'>	    
+    <%= image_tag album.cover.picture.url(:banner), :size => '126x86' if album.cover %>
+    <div class='infoPhoto'>
+      <% link_to public_album_path(album) do -%>
+      <h3>
+        <%= album.name %>
+      </h3>
+        <%= render :partial => "album_info", :object => album %>
+      <% end -%>
+    </div>
+  </div>
+  <% end %>
+</div>

@@ -1,0 +1,14 @@
+<% title("Press Releases") -%>
+<%=
+   collection_table(@releases) do |t|
+      t.header :released_at
+      t.header :title
+      t.header :body
+      t.rows.alternate = :odd
+   
+      t.rows.each do |row, release, index|
+        row.title link_to(release.title, public_press_release_path(release))
+        row.released_at "#{time_ago_in_words(release.released_at)} ago"
+      end
+   end
+%>

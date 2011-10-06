@@ -1,0 +1,7 @@
+<% title 'Register' %>
+<% form_for @user do |f| -%>
+  <%= f.error_messages %>
+  <%= hidden_field_tag 'code', params[:code]  %>
+  <%= hidden_field_tag 'user[openid_identifier]', User::GOOGLE_OPENID_ENDPOINT  %>
+  <%= f.submit 'Register with Google Account' -%>
+<% end -%>

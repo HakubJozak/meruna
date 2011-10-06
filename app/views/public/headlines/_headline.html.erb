@@ -1,0 +1,13 @@
+<%= image_tag headline.news_type.icon.url, :size => '56x49', :alt => headline.title, :class => 'icon' %>
+<h3>  
+  <% link_to public_headline_path(headline) do %>
+    <%= headline.created_at.to_date -%>:
+    <%= headline.title %>
+  <% end %>
+</h3>
+
+<p>
+  <%= h(headline.short) %>
+</p>
+<%= link_to 'read more', public_headline_path(headline), { :class => 'more' }  %>
+

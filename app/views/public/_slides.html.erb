@@ -1,0 +1,90 @@
+<div id='slideShow'>
+  <div id='leftArrow' class='arrows'></div>
+  <div id='rightArrow' class='arrows'></div>
+
+  <% slide(1, 'Football Brings People Together') do %>
+  <li><%= link_to 'MYSA tour - internship for kids from Kenya','/about-us/mysa-tour?s=1' %></li>
+  <li><%= link_to 'Workshop for European and African journalists in Rome', '/about-us/workshops?s=1' %></li>
+  <li><%= link_to 'Rome workshop for journalists', '/about-us/rome-workshop?s=1' %></li>
+  <li><%= link_to 'Vienna workshop', '/about-us/vienna-workshop?s=1' %></li>
+  <% end %>
+
+  <% slide( 2, 'Football is Our Passion') do %>
+  <li><%= link_to 'Football tournaments', '/about-us/tournaments?s=2' %></li>
+  <li><%= link_to 'Informal intercultural learning', '/about-us/informal-intercultural-learning?s=2' %></li>
+  <% end -%>
+
+  <% slide( 3, 'Football is for Everyone') do %>
+  <li><%= link_to 'Gender equality', '/about-us/gender-equality?s=3' %></li>
+  <li><%= link_to 'Fair play tournaments', '/about-us/fair-play-tournaments?s=3' %></li>
+  <% end -%>
+
+  <% slide( 4, 'Football Crosses Borders') do %>
+  <li><%= link_to 'Vienna conference', '/about-us/vienna-conference?s=4' %></li>
+  <li><%= link_to 'NGDO expert meeting in Prague', '/about-us/ngdo-meeting?s=4' %></li>
+  <% end -%>
+
+  <% slide( 5, 'Football Helps Us to Grow') do %>
+  <li><%= link_to 'Personal and social growth', '/about-us/personal-and-social-growth?s=5' %></li>
+  <li><%= link_to 'Raising awareness in Europe', '/about-us/raising-awareness?s=5' %></li>
+  <li><%= link_to 'Increasing civic responsibility', '/about-us/civic-responsibility?s=5' %></li>
+  <% end -%>
+
+  <% slide( 6, 'We Spread the Word') do %>
+  <li><%= link_to 'School programme', '/about-us/school-programme?s=6' %></li>
+  <li><%= link_to 'Public discussions', '/about-us/discussions?s=6' %></li>
+  <li><%= link_to 'Media campaign', '/about-us/media-campaign?s=6' %></li>
+  <li><%= link_to 'Concerts and happenings', '/about-us/concerts-and-happenings?s=6' %></li>
+  <% end -%>
+
+  <% slide( 7, 'There are Many Goals. Help us to score!') do %>
+  <li><%= link_to 'MDGs - Millennium Development Goals', '/about-us/mdg-goals?s=7' %></li>
+  <% end -%>
+</div>
+
+
+<% javascript_tag do %>
+
+ actualSlide = <%= @slide_number %>;
+
+window.addEvent('domready',function(){
+	var listOfSlides=$$("#slideShow .sl");
+	listOfSlides.each(function(element){element.setStyles({'opacity':0})});
+
+	if($('leftArrow'))$('leftArrow').addEvent('click',function(){changeSlide(actualSlide-1)});
+	if($('rightArrow'))$('rightArrow').addEvent('click',function(){changeSlide(actualSlide+1)});
+
+	function changeSlide(slideNumber){
+		if(slideNumber <= 0)slideNumber=listOfSlides.length;	
+		if(slideNumber > listOfSlides.length)slideNumber=1;
+	
+		$('slide'+actualSlide).fade(0);
+		actualSlide=slideNumber;
+		$('slide'+actualSlide).fade(1);
+
+		$('slide'+actualSlide+'l').tween('margin-top', [60,80])
+		
+	}
+
+	if($('slideShow'))changeSlide(actualSlide);
+
+
+	var listOfSubmenuItems=$$('#submenu a img');
+	listOfSubmenuItems.each(function(element){
+		
+		if(element.className=="act"){
+			element.src=element.src.replace(".png","-hover.png");
+		}else{
+			element.addEvent('mouseenter',function(){
+				this.src=this.src.replace(".png","-hover.png");
+			});
+			element.addEvent('mouseleave',function(){
+				this.src=this.src.replace("-hover.png",".png");
+			});
+		}
+	});
+
+
+});
+
+<% end %>

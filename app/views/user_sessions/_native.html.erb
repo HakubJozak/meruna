@@ -1,0 +1,14 @@
+<% form_for @user_session do |form| %>  
+<%= form.error_messages %>
+  <p>
+    <%= form.label :login, "Login" %>  
+    <%= form.text_field :login, :class => 'text' %>  
+  </p>
+  <p>
+    <%= form.label :password, "Password" %>  
+    <%= form.password_field :password, :class => 'text' %>  
+  </p>
+  <p>
+    <%= form.submit "Login" %>  
+  </p>
+<% end %>  

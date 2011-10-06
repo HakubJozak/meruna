@@ -1,0 +1,173 @@
+<%
+ first = '#006838'
+ second = '#57C057'
+ third = '#ECECEE'
+ fourth = '#3A6740'
+ fifth = '#09A425'
+
+ @header = first
+ @header_sorted = fifth
+
+ # text
+ @seventeen = 'black'
+
+ # bottom-border
+ @fourteen =  '#AFAFAF'
+
+ @sixteen = 'yellow'
+
+
+ # LINKS 
+ # hover
+ @thirteen = fifth
+ # visited link
+ @eleven = 'blue'
+ # normal link
+ @two = first
+ # disabled link
+ @twelve = 'black'
+
+
+
+ # ODD
+ @one = third
+ # left border - odd
+ @fifteen = '#9F9F9F'
+ # bottom border - odd
+ @six = '#9F9F9F'
+ # sorted - odd
+ @five = '#CFCFCF'
+
+
+ # EVEN
+ # sorted
+ @seven = '#EFEFEF'
+ @three = 'white'
+ # left borders - even
+ @four = '#AFAFAF'
+ # bottom borders - even, sorted
+ @eight =  '#AFAFAF'
+
+
+ # UPDATE - background
+ @nine = '#B6EFB3'
+ # update border
+ @ten = first
+
+%>
+/*
+.active-scaffold input.text input:focus { 
+  background-color:red;
+}
+*/
+
+.active-scaffold th,
+.active-scaffold th a
+{
+ background-color: <%= @header %>;
+}
+
+.active-scaffold th:asc a:hover, 
+.active-scaffold th:desc a:hover,
+.active-scaffold th a:hover
+{ 
+ background-color: red;
+}
+
+
+.active-scaffold th.sorted,
+.active-scaffold th.sorted a
+{
+ background-color: <%= @header_sorted %>;
+}
+
+td.inline-adapter-cell {
+  padding: 0px 0px 0px 0px;
+}
+
+.active-scaffold a,
+.active-scaffold a:visited {
+ color: <%= @eleven %>;
+}
+
+.active-scaffold a:hover {
+background-color: <%= @one %>;
+}
+
+
+.active-scaffold a,
+.active-scaffold a:visited {
+color: <%= @two %>;
+}
+
+.active-scaffold a.disabled {
+color: <%= @twelve %>;
+}
+
+.active-scaffold a:hover {
+background-color: <%= @thirteen %>;
+}
+
+/* Table :: Record Rows
+   ============================= */
+
+.active-scaffold tr.record td {
+ background-color:<%= @one %>;
+ border-bottom:1px solid <%= @fourteen %>;
+ border-left:1px solid <%= @fifteen %>;
+ color: <%= @seventeen %>;
+ padding: 4px 4px;
+}
+
+.active-scaffold tr.even-record td {
+background-color: <%= @three %>;
+border-left:1px solid <%= @four %>;
+}
+
+.active-scaffold tr.record td.sorted {
+background-color: <%= @five %>;
+border-bottom:1px solid <%= @six %>;
+}
+
+.active-scaffold tr.record td.actions a {
+ padding: 0px;
+ margin: 0px;
+ cursor: pointer;
+}
+
+.active-scaffold tr.even-record td.sorted {
+background-color: <%= @seven %>;
+border-bottom:1px solid <%= @eight %>;
+}
+
+.active-scaffold tbody.records td.empty {
+color: #999;
+}
+
+.active-scaffold .view {
+ background-color: <%= @nine %>;
+ border: solid 1px <%= @ten %>;
+}
+
+.active-scaffold h4,
+.active-scaffold h5 {
+ color: black;
+}
+
+.active-scaffold input.text-input,
+.active-scaffold select,
+.active-scaffold textarea
+ {
+ border: 1px solid gray;
+}
+
+.active-scaffold textarea {
+ width: 550px;
+ height: 120px;
+}
+
+/* FIX - nested scaffold actions were to low */
+table .active-scaffold .actions {
+ top: 0px;
+}
+

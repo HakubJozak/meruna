@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>UnicodeStringTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+    <script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>     
+    <div class="banner">
+        <h1>
+            <span class="type">Class</span> 
+            UnicodeStringTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/test/ts_gdata_rb.html">test/ts_gdata.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+    
+
+    
+
+    
+    
+
+    
+    
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+    
+        <dt>T</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000008">test_jlength</a></li>
+                
+            </ul>
+        </dd>
+    
+    </dl>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+            <div class="sectiontitle">Instance Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="M000008">
+                    
+                    <a name="M000008"></a><b>test_jlength</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000008_source')" id="l_M000008_source">show</a>
+                        
+                    </p>
+                    <div id="M000008_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File test/ts_gdata.rb, line 33</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_jlength</span>
+    <span class="ruby-identifier">s</span> = <span class="ruby-value str">&quot;Καλημέρα κόσμε!&quot;</span>
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">15</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">jlength</span>) <span class="ruby-comment cmt"># Note the 'j'</span>
+    <span class="ruby-identifier">assert_not_equal</span>(<span class="ruby-value">15</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">length</span>) <span class="ruby-comment cmt"># Normal, non unicode length</span>
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">28</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">length</span>) <span class="ruby-comment cmt"># Greek letters happen to take two-bytes</span>
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+</div>
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,9 @@
+<% unless current_user -%>
+   <%= link_to "Login", login_path %>
+<% else -%>
+   <%= link_to "Web", root_path %>
+   |
+   <%= link_to "Administration", admin_path %>
+   |
+   <%= link_to "Logout", logout_path %>
+<% end -%>

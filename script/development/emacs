@@ -1,0 +1,3 @@
+#/usr/bin/bash
+
+/usr/bin/emacs23 --find-file ~/prog/INEX/meruna

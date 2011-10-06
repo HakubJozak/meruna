@@ -1,0 +1,200 @@
+/* OBECNÉ STYLY */
+body{font-size: 11px; font-family: Tahoma, arial, times new roman}
+fieldset,span,body,table,ul,li,h1,h2,h3,h4,h5,h6{margin:0;padding:0}
+ul{list-style: none}
+a{text-decoration: none}
+a:hover{text-decoration: underline}
+fieldset, a img{border: 0 none}
+object:focus,a:focus{outline: none}
+p{margin: 10px 0}
+
+/* DALŠÍ STYLY */
+
+
+#h2-news{width: 48px; height: 11px; background: url(../images/h2-news.gif) no-repeat}
+#h2-manuals{width: 122px; height: 17px; background: url(../images/h2-manuals.gif) no-repeat}
+#h2-photogallery{width: 211px; height: 17px; background: url(../images/h2-photogallery.gif) no-repeat; margin-top: 5px;}
+#h2-related-news{width: 130px; height: 17px; background: url(../images/h2-related-news.gif) no-repeat; }
+#h2-see-also{width: 122px; height: 17px; background: url(../images/h2-see-also.gif) no-repeat}
+#h2-vienna-conference{width: 318px; height: 17px; background: url(../images/h2-vienna-conference.gif) no-repeat}
+
+.contentText img{margin: 0 10px 10px 0}
+.textContact{border-top: 1px solid #9b9c9e; color: #9b9c9e}
+.textContact strong{color: #000}
+.textContact a{color: #9b9c9e}
+
+#logo{margin: 23px 0 0 45px; position: absolute}
+
+#slideShow{margin-top: 113px; position: absolute}
+#slideShow ul{position: absolute; margin: 80px 0 0 700px; width: 260px}
+#slideShow ul li{padding-left: 20px; background: url(../images/li-background.gif) no-repeat 0 1px; font-size: 12px; color: #005f00; margin-bottom: 6px; font-weight: bold}
+
+#slideShow #leftArrow{background: url(../images/arrow-back-left.gif) no-repeat; margin: 260px 0 0 56px}
+#slideShow #rightArrow{background: url(../images/arrow-next-right.gif) no-repeat;  margin: 260px 0 0 905px}
+#slideShow .arrows{width: 32px; height: 53px; position: absolute; display: block; z-index: 1; cursor: pointer}
+#slideShow .sl{position: absolute}
+
+#footer{color: #888888; border-top: 1px solid #cccccc; font-size: 10px;}
+#footer div{margin-top: 10px; padding-top: 3px !important}
+#footer a{color: #888888; font-weight: bold;}
+#footer #facebook{position: absolute; width: 221px; height: 35px; margin-top: -50px; margin-left: 10px; &margin-left: -540px}
+#footer #copyright{float: right; position: relative; width: 330px;}
+#footer #info{float: left; position: relative; width: 260px; padding: 0 20px}
+#footer #eu{float: left; position: relative; width: 230px; border: 1px solid #CCCCCC; border-width: 0 1px; padding: 0 10px; height: 55px}
+#footer #eu img{float: left; margin-right: 10px}
+
+#banners{width: 170px; border-top: 1px solid #c2c2c2; margin: 20px 0 0 -10px}
+#banners .banner{width: 100px; height: 100px; background: #d8d9da; margin: 20px 0 10px 0}
+
+#relatedNews a{display: block; padding: 4px 0 4px 15px; background: url(../images/li-background.gif) no-repeat left center; color: #009f00; font-size: 12px}
+
+.newsBox{width: 188px; float: left; padding:0 20px 0 100px; background: url(../images/news-background-line-right.gif) no-repeat right center; height: 170px}
+.newsBox .icon{position: absolute; margin-left: -75px}
+.newsBox h3{color: #009f00; font-size: 12px; margin-bottom: 10px}
+.newsBox h3 a{color: #009f00;}
+.newsBox .more{color: #939598; background: url(../images/more-background.gif) no-repeat 0 5px; padding: 3px 0 3px 10px; margin-top: 7px; display: block}
+.newsBox p{color: #000000;}
+.box .last{border: 0 none !important; background: none}
+.box .first{padding-left: 75px !important}
+
+.header{margin-bottom: 10px}
+.header span{display: none; visibility: hidden;}
+
+.info{font-size: 12; font-weight: bold; margin-top: 20px}
+.share img{margin-top: 5px}
+
+.line{border: 0px; padding: 0; border-bottom: 1px solid #c7c7c8; margin: 15px 0 15px -8px; width: 170px}
+
+/* MENU */
+#menu{width: 551px; height: 18px; position: absolute; margin: 71px 0 0 403px; padding: 0}
+#menu a{display: block; float: left; background: url(../images/menu-background.gif) no-repeat; height: 18px}
+#menu a:hover{text-decoration: none}
+#menu a span{background: none; visibility: hidden}
+
+a#highlights{background-position: 0 0; width: 132px} a#highlights.act,a#highlights:hover{background-position: 0 -18px}
+a#about-us{background-position: -132px 0; width: 125px} a#about-us.act,a#about-us:hover{background-position: -132px -18px}
+a#documents{background-position: -257px 0; width: 148px} a#documents.act,a#documents:hover{background-position: -257px -18px}
+a#play-with-us{background-position: -405px 0; width: 146px} a#play-with-us.act,a#play-with-us:hover{background-position: -405px -18px}
+
+
+/* SUBMENU */
+#submenu{width: 464px; height: 18px; position: absolute; margin: 95px 0 0 410px; padding: 0; font-size: 13px; font-weight: bold}
+#submenu a{color: #000000; margin-right: 10px}
+#submenu a:hover,#submenu a.act{color: #11a511; text-decoration: none}
+#submenu span{color: white}
+
+/* LOCALIZATION FILTER */
+#localizationContent{color: #9b9c9e; font-weight: bold; width: 340px}
+#localizationContent span{font-size: 17px; color: #ffd96e; top: 1px; font-weight: bold; position: relative}
+#localizationSelect{float: right; &margin-top: -20px}
+#localizationSelect a{display: block; float: left; margin-right: 5px; width: 27px; height: 28px; background: url(../images/localization-filter-background.gif) no-repeat left top}
+#localizationSelect a span{display: none; visibility: hidden}
+
+a#all{background-position: 0 0}
+a#au{background-position: -30px 0}
+a#hu{background-position: -60px 0}
+a#cz{background-position: -90px 0}
+a#it{background-position: -120px 0}
+
+a#all.act{background-position: 0 -30px; width: 39px; height: 52px; margin-top: -5px}
+a#au.act{background-position: -40px -30px; width: 39px; height: 52px; margin-top: -5px}
+a#hu.act{background-position: -80px -30px; width: 39px; height: 52px; margin-top: -5px}
+a#cz.act{background-position: -120px -30px; width: 39px; height: 52px; margin-top: -5px}
+a#it.act{background-position: -160px -30px; width: 39px; height: 52px; margin-top: -5px}
+
+
+
+
+/* PAGECONTROL */
+#pageControl{width: 525px; height: 30px; position: absolute; margin: 15px 0 0 425px; color: #7f7f7f}
+#pageControl a{color: #7f7f7f; }
+#pageControl label{display: block; float: left; padding-top: 3px}
+#pageControl #searchName{width: 55px}
+#pageControl #translateName{width: 90px}
+#pageControl input{width: 117px; height: 14px; border: 0 none; padding: 4px;  color: #7f7f7f; background: none}
+#pageControl #searchContent{position: absolute; background: url(../images/input-search-background.gif) no-repeat 53px 0; width: 203px}
+#pageControl #translateContent{position: absolute; margin-left: 220px; background: url(../images/input-translate-background.gif) no-repeat 90px 0; width: 303px}
+#pageControl #searchButton{display: block; position: absolute; margin-left: 490px; padding-top: 3px}
+#pageControl #translateSubmit, #pageControl #searchSubmit{position: absolute; width: 22px; height: 22px; z-index: 2; cursor: pointer; background: none}
+
+
+/* TABLE DECORATION */
+.decorationTable table{border-collapse: collapse; border-width: 0; width: 596px; margin-left: 2px; margin-top: -3px}
+.decorationTable table tr th{color: #005f00; text-align: left; padding: 10px 10px; border-bottom: 1px solid #9b9c9e}
+.decorationTable table tr th.a1{background: #ffd96e}
+.decorationTable table tr th.a2{background: #ffe8a8}
+.decorationTable table tr th.a3{background: #ffebb4}
+.decorationTable table tr th.a4{background: #ffeebc}
+.decorationTable table tr th.a5{background: #fffbf0}
+
+.decorationTable table tr td{color: #9b9c9e; padding: 8px 0 8px 10px;  border-bottom: 1px solid #9b9c9e}
+.decorationTable table tr td.a1{padding: 0px 4px; width: 26px}
+.decorationTable table tr td.a2{background-image: url(../images/green-bg-line-1.gif); background-repeat: no-repeat; background-position: left center}
+.decorationTable table tr td.a3{background-image: url(../images/green-bg-line-2.gif); background-repeat: no-repeat; background-position: left center}
+.decorationTable table tr td.a4{background-image: url(../images/green-bg-line-3.gif); background-repeat: no-repeat; background-position: left center}
+.decorationTable table tr td.a5{background-image: url(../images/green-bg-line-4.gif); background-repeat: no-repeat; background-position: left center}
+.decorationTable table tr td.a5 img{float: left; margin-right: 5px}
+.decorationTable table tr td.a5 a{color: #9b9c9e}
+
+.decorationTable table .one td{background: #ececed; color: #9b9c9e}
+.decorationTable table .last td{border-bottom: 0 none !important}
+.decorationTable table .act td{background-color: #ffd96e !important}
+.decorationTable .imgBottom{top: -8px; position: relative}
+
+/* PHOTOGALLERY */ 
+
+.photogallerySet{margin-top: 30px}
+.photogallerySet .year{height: 12px; background: url(../images/photogalleries-year-background.gif) no-repeat left top; color: white; font-size: 10px; padding: 0px 0 0 13px}
+
+.photogallerySet .photo{width: 156px; display: block; float: left; height: 170px; overflow: hidden; margin: 10px 12px 0 0}
+.photogallerySet .photo .correct{position: absolute; width: 161px; height: 14px; background: url(../images/photo-correct-background.png) no-repeat; margin: 105px 0 0 -3px}
+.photogallerySet .photo h3{font-size: 12px; color: #000000; margin-top: 10px}
+
+.photogallerySet .last{margin-right: 0px}
+
+#photogalleryName{position: absolute; width: 400px; margin: -30px 0 0 220px}
+#photogalleryInfo{padding-top: 1px}
+
+.date{position: relative; background: url(../images/calendar-icon.gif) no-repeat left center; padding-left: 13px; color: #9b9c9e; margin-left: 10px; margin-top: 5px}
+.views{position: relative; background: url(../images/views-icon.gif) no-repeat left center; padding-left: 17px; color: #9b9c9e; margin: -13px 0 0 80px; }
+
+#seeAlso .photo h3{font-size: 12px; color: #11a511; margin-top: 5px}
+#seeAlso .photo{color: #9b9c9e; margin-bottom: 20px}
+#seeAlso .infoPhoto{padding-left: 10px}
+
+/* OBECNÉ NASTAVENÍ PRVKŮ LAYOUTU (barva, výška, border...) */
+body{background: #fff}
+#main{}
+
+#header{height: 430px}
+.downloads #header{height: 100px}
+.photogalleries #header{height: 100px}
+.photogallery #header{height: 100px}
+.article #header{height: 100px}
+
+#content{padding: 0 45px; width: 900px !important; margin-top: 40px}
+.downloads #content{background: url(../images/download-content-background.jpg) no-repeat left top !important}
+.photogalleries #content{background: url(../images/photogalleries-content-background.jpg) no-repeat left top !important}
+.photogallery #content{background: url(../images/photogallery-content-background.jpg) no-repeat left top !important}
+.article #content{background: url(../images/article-content-background.jpg) no-repeat left top !important}
+
+
+.downloads .info{height: 100px;}
+.photogalleries .info{height: 20px}
+
+#left{width: 660px; padding: 14px 30px 0 25px}
+#right{width: 150px; min-height: 600px; padding: 30px 0 0 25px}
+
+#footer{margin: 100px auto; padding: 0 0 100px 0; width: 900px !important}
+.downloads #footer{margin: 0 auto;}
+
+/* ŠÍŘKY PRVKU LAYOUTU !!!! obecne !!!! */
+#header,#main,#content,#footer{width: 990px;} /* hlavni velikost boxu */ 
+
+/* KOREKTNI ZOBRAZENI  !!!! nemenit !!!! */
+#content,#content #left,#content #center,#content #right, #footer{position: relative} 
+#main,#header,.cb{margin: 0 auto; display: block}
+#content,#footer{display: block}
+#content #left, #content #center{float: left; display: block}
+#content #right{float: right; display: block}
+.cb{clear:both; height: 0px; overflow: hidden; _clear: none;}

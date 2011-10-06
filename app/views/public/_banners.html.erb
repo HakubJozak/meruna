@@ -1,0 +1,13 @@
+  <%= render :partial => "public/facebook_fan" %>
+  <%= render :partial => "public/facebook_share" %>
+
+  <div id='banners'>
+    <% Banner.published.each do |banner| %>
+    <div class='banner'>
+      <% link_to banner.link, :title => banner.name, :popup => true do %>
+        <%= image_tag(banner.picture.url) %>
+      <% end -%>
+    </div>
+    <% end -%>
+  </div>
+

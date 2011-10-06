@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>TC_GData_Client_Base</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+    <script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>     
+    <div class="banner">
+        <h1>
+            <span class="type">Class</span> 
+            TC_GData_Client_Base 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/test/tc_gdata_client_base_rb.html">test/tc_gdata_client_base.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+    
+
+    
+
+    
+    
+
+    
+    
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+    
+        <dt>T</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000030">test_clientlogin_with_service</a>,</li>
+                
+                <li><a href="#M000029">test_simple_gdata_get</a></li>
+                
+            </ul>
+        </dd>
+    
+    </dl>
+    
+
+    
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+        
+        <li>
+            
+            <a href="TestHelper.html">TestHelper</a>
+            
+            START:includes
+        </li>
+        
+    </ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+            <div class="sectiontitle">Instance Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="M000030">
+                    
+                    <a name="M000030"></a><b>test_clientlogin_with_service</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000030_source')" id="l_M000030_source">show</a>
+                        
+                    </p>
+                    <div id="M000030_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File test/tc_gdata_client_base.rb, line 28</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_clientlogin_with_service</span>
+    <span class="ruby-identifier">service</span> = <span class="ruby-constant">GData</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">service</span>.<span class="ruby-identifier">clientlogin</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">get_username</span>(), <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">get_password</span>(), <span class="ruby-keyword kw">nil</span>, <span class="ruby-keyword kw">nil</span>, 
+      <span class="ruby-value str">'youtube'</span>)
+    <span class="ruby-identifier">feed</span> = <span class="ruby-identifier">service</span>.<span class="ruby-identifier">get</span>(<span class="ruby-value str">'http://gdata.youtube.com/feeds/api/users/default/uploads?max-results=1'</span>).<span class="ruby-identifier">to_xml</span>
+    <span class="ruby-identifier">assert_not_nil</span>(<span class="ruby-identifier">feed</span>, <span class="ruby-value str">'feed can not be nil'</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000029">
+                    
+                    <a name="M000029"></a><b>test_simple_gdata_get</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000029_source')" id="l_M000029_source">show</a>
+                        
+                    </p>
+                    <div id="M000029_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File test/tc_gdata_client_base.rb, line 22</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_simple_gdata_get</span>
+    <span class="ruby-identifier">service</span> = <span class="ruby-constant">GData</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">feed</span> = <span class="ruby-identifier">service</span>.<span class="ruby-identifier">get</span>(<span class="ruby-value str">'http://gdata.youtube.com/feeds/base/videos?max-results=1'</span>).<span class="ruby-identifier">to_xml</span>
+    <span class="ruby-identifier">assert_not_nil</span>(<span class="ruby-identifier">feed</span>, <span class="ruby-value str">'feed can not be nil'</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+</div>
+    </div>
+  </body>
+</html>    

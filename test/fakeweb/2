@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Účty Google</title>
+  <style type="text/css">
+  body {font-family: arial,sans-serif;}
+  .body {margin: 15px 15px; }
+  </style>
+  </head>
+  <body dir="ltr" ><style type="text/css">
+  .aligns {
+  text-align: right;
+  }
+  .margins {
+  margin-left: 13px;
+  }
+  .floats-normal {
+  float: left;
+  }
+  .floats-reverse {
+  float: right;
+  margin-top: 17px;
+  }
+</style>
+  <div class="header margins" style="height: 59px; margin: 33px 15px 9px 15px;">
+  <img src="https://www.google.com/intl/cs/images/logos/accounts_logo.gif" alt="Účty Google" height="40px;"/>
+  </div>
+  <div style="clear:both;"></div>
+  <div class="body">
+Požadovaná stránka není platná.
+  </div>
+  <div class="footer" style="color: #666; font-size: smaller; margin: 50px 15px 0 15px; text-align: center;"> &copy; 2009 Google – <a href="http://www.google.com">Domovská stránka Google</a> -
+  <a href="https://www.google.com/accounts/TOS?hl=cs">Smluvní podmínky</a> -
+  <a href="http://www.google.com/intl/cs/privacy.html">Zásady ochrany osobních údajů</a> -
+  <a href="http://www.google.com/support/accounts?hl=cs">Nápověda</a>
+  </div>
+  </body>
+</html>

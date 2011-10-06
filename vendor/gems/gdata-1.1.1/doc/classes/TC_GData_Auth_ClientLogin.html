@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>TC_GData_Auth_ClientLogin</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+    <script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>     
+    <div class="banner">
+        <h1>
+            <span class="type">Class</span> 
+            TC_GData_Auth_ClientLogin 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/test/tc_gdata_auth_clientlogin_rb.html">test/tc_gdata_auth_clientlogin.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+    
+
+    
+
+    
+    
+
+    
+    
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+    
+        <dt>T</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000005">test_all_clients</a>,</li>
+                
+                <li><a href="#M000004">test_get_token</a>,</li>
+                
+                <li><a href="#M000003">test_has_config</a>,</li>
+                
+                <li><a href="#M000007">test_specify_account_type</a></li>
+                
+            </ul>
+        </dd>
+    
+    </dl>
+    
+
+    
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+        
+        <li>
+            
+            <a href="TestHelper.html">TestHelper</a>
+            
+            START:includes
+        </li>
+        
+    </ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+            <div class="sectiontitle">Instance Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="M000005">
+                    
+                    <a name="M000005"></a><b>test_all_clients</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000005_source')" id="l_M000005_source">show</a>
+                        
+                    </p>
+                    <div id="M000005_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File test/tc_gdata_auth_clientlogin.rb, line 37</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_all_clients</span>
+    <span class="ruby-identifier">source</span> = <span class="ruby-value str">'GDataUnitTest'</span>
+    <span class="ruby-constant">GData</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span>.<span class="ruby-identifier">constants</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">const_name</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">const</span> = <span class="ruby-constant">GData</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">const_name</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">const</span>.<span class="ruby-identifier">superclass</span> <span class="ruby-operator">==</span> <span class="ruby-constant">GData</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+        <span class="ruby-identifier">instance</span> = <span class="ruby-identifier">const</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-identifier">assert_nothing_raised</span> <span class="ruby-keyword kw">do</span>
+          <span class="ruby-identifier">instance</span>.<span class="ruby-identifier">clientlogin</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">get_username</span>(), <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">get_password</span>(), <span class="ruby-identifier">source</span>)
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000004">
+                    
+                    <a name="M000004"></a><b>test_get_token</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000004_source')" id="l_M000004_source">show</a>
+                        
+                    </p>
+                    <div id="M000004_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File test/tc_gdata_auth_clientlogin.rb, line 29</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_get_token</span>
+    <span class="ruby-identifier">client_login</span> = <span class="ruby-constant">GData</span><span class="ruby-operator">::</span><span class="ruby-constant">Auth</span><span class="ruby-operator">::</span><span class="ruby-constant">ClientLogin</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">'cl'</span>)
+    <span class="ruby-identifier">source</span> = <span class="ruby-value str">'GDataUnitTest'</span>
+    <span class="ruby-identifier">assert_nothing_raised</span> <span class="ruby-keyword kw">do</span>
+      <span class="ruby-identifier">token</span> = <span class="ruby-identifier">client_login</span>.<span class="ruby-identifier">get_token</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">get_username</span>(), <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">get_password</span>(), <span class="ruby-identifier">source</span>)
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000003">
+                    
+                    <a name="M000003"></a><b>test_has_config</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000003_source')" id="l_M000003_source">show</a>
+                        
+                    </p>
+                    <div id="M000003_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File test/tc_gdata_auth_clientlogin.rb, line 22</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_has_config</span>
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">assert_not_nil</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">get_username</span>(), 
+      <span class="ruby-value str">'Must have a username in test_config.yml'</span>)
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">assert_not_nil</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">get_password</span>(), 
+      <span class="ruby-value str">'Must have a password in test_config.yml'</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000007">
+                    
+                    <a name="M000007"></a><b>test_specify_account_type</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000007_source')" id="l_M000007_source">show</a>
+                        
+                    </p>
+                    <div id="M000007_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File test/tc_gdata_auth_clientlogin.rb, line 50</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_specify_account_type</span>
+    <span class="ruby-identifier">gp</span> = <span class="ruby-constant">GData</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Photos</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">gp</span>.<span class="ruby-identifier">source</span> = <span class="ruby-value str">'GDataUnitTest'</span>
+    <span class="ruby-identifier">assert_nothing_raised</span> <span class="ruby-keyword kw">do</span>
+      <span class="ruby-identifier">token</span> = <span class="ruby-identifier">gp</span>.<span class="ruby-identifier">clientlogin</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">get_username</span>(), <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">get_password</span>(), <span class="ruby-keyword kw">nil</span>, <span class="ruby-keyword kw">nil</span>, <span class="ruby-keyword kw">nil</span>, <span class="ruby-value str">'GOOGLE'</span>)
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+</div>
+    </div>
+  </body>
+</html>    

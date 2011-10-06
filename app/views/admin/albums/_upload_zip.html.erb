@@ -1,0 +1,15 @@
+<h2>Bulk Upload of ZIP file</h2>
+
+<p>You can upload many pictures at once by packing them into a '.zip' file. All images in the root directory of the ZIP will be added to the album with simple descriptions based on their filename. Good Luck!</p>
+
+<br/>
+
+<% form_tag({ :action => :upload_zip }, :multipart => true) do -%>
+ZIP file:  <%= file_field_tag('zip') %>
+<%= hidden_field_tag(:id, @album.id) %>
+
+<%= submit_tag('Upload') %>
+<%= link_to as_(:cancel), main_path_to_return, :class => 'cancel' %>
+<% end -%>
+
+<br/>
